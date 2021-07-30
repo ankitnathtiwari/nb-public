@@ -1,0 +1,11 @@
+.post-list {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 800px) {
+  .post-list {
+    margin: 100px auto;
+  }
+}
