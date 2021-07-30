@@ -1,7 +1,6 @@
 import { baseUrl, testUrl } from "../base-url/index";
 
 export const initFun = (url) => {
-  console.log(url, "initfun url ");
   return {
     query: url,
     page: 1,
