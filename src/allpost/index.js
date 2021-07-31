@@ -7,6 +7,7 @@ import "./index.css";
 import { Post } from "../post/index";
 import { Button } from "../shared/button";
 import { useLocation } from "react-router-dom";
+import { Loading } from "../shared/loading";
 
 export const AllPost = () => {
   const path = useLocation().pathname.split("/")[1];
@@ -22,10 +23,14 @@ export const AllPost = () => {
     return () => {};
   }, [path]);
 
-  console.log(state, "allpost state");
+  //  console.log(state, "allpost state");
   if (state.posts.length === 0) {
     if (state.loading || state.initLoading) {
-      return <h2>Loading..</h2>;
+      return (
+        <div className='loading-component'>
+          <Loading />
+        </div>
+      );
     } else {
       return <h3>No Post to Show</h3>;
     }

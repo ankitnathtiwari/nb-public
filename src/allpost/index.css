@@ -3,6 +3,10 @@
   display: flex;
   flex-direction: column;
 }
+.loading-component {
+  margin: auto;
+  margin-top: 200px;
+}
 
 @media only screen and (max-width: 800px) {
   .post-list {
