@@ -15,7 +15,9 @@ export const AllPost = () => {
 
   useEffect(() => {
     if (state.query !== path) {
-      dispatch({ type: "QUERY_CHANGE", payload: path });
+      if (path.length !== 0) {
+        dispatch({ type: "QUERY_CHANGE", payload: path });
+      }
     }
     return () => {};
   }, [path]);

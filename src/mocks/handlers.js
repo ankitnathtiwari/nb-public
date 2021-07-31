@@ -9,7 +9,6 @@ import { baseUrl } from "../base-url";
 
 export const handlers = [
   rest.get(baseUrl, (req, res, ctx) => {
-    console.log(req.url.searchParams.get("page"), "page");
     if (req.url.searchParams.get("page") == 1) {
       return res(ctx.json(posts1));
     }
