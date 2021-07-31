@@ -5,7 +5,7 @@ module.exports = {
   //entrypoint
   //outputpoint
 
-  // mode: "development",
+  //mode: "development",
   mode: "production",
   //loaders
   module: {
