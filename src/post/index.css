@@ -15,6 +15,14 @@
   margin-right: 20px;
   margin-bottom: 20px;
 }
+.post h2 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.post-para {
+  margin-top: 10px;
+  font-weight: lighter;
+}
 @media only screen and (max-width: 1050px) {
   .post {
     margin: 20px auto;
@@ -31,7 +39,7 @@
 @media only screen and (max-width: 500px) {
   .post {
     margin: 20px auto;
-    width: 85vw;
+    width: 88vw;
   }
   .post img {
     width: 85vw;

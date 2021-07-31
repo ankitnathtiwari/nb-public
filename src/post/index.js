@@ -8,7 +8,7 @@ export const Post = ({ post }) => {
     <div className='post'>
       <img src={post.image} alt='Girl in a jacket' width='200' height='200' />
       <h2>{post.title}</h2>
-      <p>{post.content}</p>
+      <p className='post-para'>{post.content}</p>
     </div>
   );
 };
