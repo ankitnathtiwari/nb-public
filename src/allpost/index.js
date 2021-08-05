@@ -8,6 +8,7 @@ import { Post } from "../post/index";
 import { Button } from "../shared/button";
 import { useLocation } from "react-router-dom";
 import { Loading } from "../shared/loading";
+import { topics } from "../base-url/index";
 
 export const AllPost = () => {
   const path = useLocation().pathname.split("/")[1];
@@ -15,6 +16,7 @@ export const AllPost = () => {
   useFetch(state, dispatch, path);
 
   useEffect(() => {
+    console.log(topics.includes(path));
     if (state.query !== path) {
       if (path.length !== 0) {
         dispatch({ type: "QUERY_CHANGE", payload: path });
@@ -25,6 +27,7 @@ export const AllPost = () => {
 
   //  console.log(state, "allpost state");
   if (state.posts.length === 0) {
+    console.log("allpost lenght", state.posts.length);
     if (state.loading || state.initLoading) {
       return (
         <div className='loading-component'>
@@ -32,7 +35,11 @@ export const AllPost = () => {
         </div>
       );
     } else {
-      return <h3>No Post to Show</h3>;
+      return (
+        <div className='loading-component'>
+          <h3>No Post to Show</h3>
+        </div>
+      );
     }
   } else {
     return (

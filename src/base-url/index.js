@@ -5,3 +5,14 @@ export const domain = "https://newsbird.live";
 export const awsProdUrl = "http://localhost";
 
 export const baseUrl = `${domain}/json_api/post/allpost`;
+
+export const topics = [
+  "",
+  "all",
+  "politics",
+  "sports",
+  "business",
+  "entertainment",
+  "world",
+  "scienceandtech",
+];

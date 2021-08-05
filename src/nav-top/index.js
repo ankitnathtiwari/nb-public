@@ -27,7 +27,7 @@ export const NavTop = ({ sidebar, handleSidebar }) => {
         </div>
       </div>
       <div className='nav-top-side-bar'>
-        <NavTopSide displaySidebar={sidebar} />
+        <NavTopSide displaySidebar={sidebar} handleSidebar={handleSidebar} />
       </div>
     </div>
   );

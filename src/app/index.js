@@ -16,7 +16,9 @@ export const App = () => {
         <NavTop sidebar={sidebar} handleSidebar={handleSidebar} />
         <div className='app-content' onClick={() => handleSidebar(false)}>
           <NavSide />
-          <AllPost />
+          <Route path='/'>
+            <AllPost />
+          </Route>
 
           {/* <PostList /> */}
         </div>
