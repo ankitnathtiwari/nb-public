@@ -11,7 +11,7 @@ export const Post = ({ post }) => {
       <h2>{post.title}</h2>
       <p className='post-para'>{post.content}</p>
       <p className='post_date'>
-        At {moment(post.pub_date).format(" h:mm:ss, on Mo MMM YYYY ")}
+        {moment(post.pub_date).format(" h:m a, on Do MMM YYYY ")}
       </p>
     </div>
   );
