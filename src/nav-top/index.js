@@ -23,7 +23,7 @@ export const NavTop = ({ sidebar, handleSidebar }) => {
           </svg>
         </div>
         <div className='nav-top-logo'>
-          <Link to='/home'>NewsBird</Link>
+          <Link to='/all'>NewsBird</Link>
         </div>
       </div>
       <div className='nav-top-side-bar'>

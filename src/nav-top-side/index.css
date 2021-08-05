@@ -1,5 +1,6 @@
 .nav-top-side {
   display: none;
+  background: #000;
 }
 .nav-top-side div a {
   display: none;
