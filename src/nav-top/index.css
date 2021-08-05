@@ -1,7 +1,7 @@
 .nav-top {
   background: #000;
   position: fixed;
-  z-index: 1;
+  z-index: 1000;
 }
 
 .nav-top-bar {
@@ -16,6 +16,8 @@
 
 .nav-top-logo {
   margin: auto;
+  z-index: 1000;
+  background: #000;
 }
 .nav-top a {
   color: rgba(255, 255, 255, 0.933);
