@@ -4,9 +4,13 @@ const path = require("path");
 module.exports = {
   //entrypoint
   //outputpoint
-
-  mode: "development",
-  // mode: "production",
+  output: {
+    path: path.join(__dirname, "public", "dist"),
+    filename: "bundle.js",
+    publicPath: "/",
+  },
+  //mode: "development",
+  mode: "production",
   //loaders
   module: {
     //rules an arry of objects
@@ -36,7 +40,9 @@ module.exports = {
   ],
 
   //devServer historyApiFallback for react router
+
   devServer: {
     historyApiFallback: true,
+    contentBase: "./",
   },
 };
