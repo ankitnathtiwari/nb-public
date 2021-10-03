@@ -8,7 +8,7 @@ const getData = (url, dispatch) => {
       dispatch({ type: "fetchCompleted", payload: res.data });
     })
     .catch((err) => {
-      dispatch({ type: "err" });
+      dispatch({ type: "ERR" });
     });
 };
 

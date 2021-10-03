@@ -24,3 +24,10 @@ export const handleQuery = (state, action) => {
     loading: true,
   };
 };
+export const handleErr = (state, action) => {
+  return {
+    ...state,
+    loading: false,
+    initLoading: false,
+  };
+};

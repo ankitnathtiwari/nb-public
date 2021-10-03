@@ -1,4 +1,9 @@
-import { fetchCompleted, handleLoadMore, handleQuery } from "./eventHandlers";
+import {
+  fetchCompleted,
+  handleLoadMore,
+  handleQuery,
+  handleErr,
+} from "./eventHandlers";
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -8,6 +13,8 @@ export const reducer = (state, action) => {
       return handleLoadMore(state, action);
     case "QUERY_CHANGE":
       return handleQuery(state, action);
+    case "ERR":
+      return handleErr(state, action);
     default:
       throw new Error();
   }
