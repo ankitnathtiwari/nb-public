@@ -27,7 +27,6 @@ export const AllPost = () => {
 
   //  console.log(state, "allpost state");
   if (state.posts.length === 0) {
-    console.log("allpost lenght", state.posts.length);
     if (state.loading || state.initLoading) {
       return (
         <div className='loading-component'>

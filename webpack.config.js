@@ -5,8 +5,8 @@ module.exports = {
   //entrypoint
   //outputpoint
 
-  //mode: "development",
-  mode: "production",
+  mode: "development",
+  // mode: "production",
   //loaders
   module: {
     //rules an arry of objects
