@@ -6,6 +6,7 @@ export const sNBDomain = "https://newsbird.live";
 export const awsProdUrl = "http://localhost";
 
 export const baseUrl = `${sNBDomain}/json_api/post/allpost`;
+export const imageUrl = sNBDomain;
 
 export const topics = [
   "",
