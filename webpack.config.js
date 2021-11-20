@@ -9,8 +9,8 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/",
   },
-  //mode: "development",
-  mode: "production",
+  mode: "development",
+  //mode: "production",
   //loaders
   module: {
     //rules an arry of objects
