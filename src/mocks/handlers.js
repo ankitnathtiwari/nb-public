@@ -29,12 +29,14 @@ export const handlers = [
     return res(ctx.json([]));
   }),
 
-  rest.get(`${imageUrl}/compressed-images/fakeimage.jpg`,
+  rest.get(`${imageUrl}/fakeimage.jpg`,
     async (_, res, ctx) => {
       // Convert "base64" image to "ArrayBuffer".
       const imageBuffer = await fetch(fakeimage).then((res) =>
         res.arrayBuffer()
       );
+
+
       return res(
         ctx.set("Content-Length", imageBuffer.byteLength.toString()),
         ctx.set("Content-Type", "image/jpeg"),

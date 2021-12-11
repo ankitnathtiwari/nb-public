@@ -19,14 +19,14 @@
   .nav-top-side {
     display: flex;
     position: relative;
-    top: 20px;
+    top: 0px;
     left: 0px;
     flex-direction: column;
     background-color: #303036;
     width: 220px;
     height: 90vh;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    border-radius: 0px 0px 5px 0px;
     z-index: #303036;
   }
   .nav-top-side div {

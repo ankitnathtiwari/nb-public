@@ -9,7 +9,9 @@ export const NavTop = ({ sidebar, handleSidebar }) => {
         <div
           className='nav-top-burger-icon'
           onClick={() => handleSidebar(true)}>
-          <svg
+          <svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24" width="36px" height="48px"><path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"/></svg>
+
+          {/* <svg
             xmlns='http://www.w3.org/2000/svg'
             width='23'
             height='20'
@@ -20,7 +22,7 @@ export const NavTop = ({ sidebar, handleSidebar }) => {
               transform='translate(6160)'
               fill='#fff'
             />
-          </svg>
+          </svg> */}
         </div>
         <div className='nav-top-logo'>
           <Link to='/all'>NewsBird</Link>
