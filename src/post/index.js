@@ -40,7 +40,7 @@ export const Post = ({ post }) => {
   return (
     <div className="post">
       <img
-        src={`${imageUrl}/compressed-images/${post.image}`}
+        src={`${imageUrl}/${post.image}`}
         alt="News Image"
         width="200"
         height="200"
