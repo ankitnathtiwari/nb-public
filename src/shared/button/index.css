@@ -2,21 +2,22 @@
   width: 100px;
   height: 38px;
   display: block;
-  border: 2px solid #000;
+  border: 1px solid #303036;
   margin: 5px auto;
   text-decoration: none;
-  background: #000;
+  background: #303036;
   color: #fefefe;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   cursor: pointer;
   text-align: center;
   font-weight: bold;
   padding: 5px;
+  border-radius: 4px;
 }
 
 .button:hover {
   background-color: #fefefe;
-  color: #000;
+  color: #303036;
 }
 
 .button:disabled {

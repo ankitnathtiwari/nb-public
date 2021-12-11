@@ -1,5 +1,5 @@
 .nav-top {
-  background: #000;
+  background: #303036;
   position: fixed;
   z-index: 1000;
 }
@@ -7,7 +7,7 @@
 .nav-top-bar {
   height: 70px;
   width: 100vw;
-  background-color: #000;
+  background-color: #303036;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   margin: 0px;
@@ -17,7 +17,7 @@
 .nav-top-logo {
   margin: auto;
   z-index: 1000;
-  background: #000;
+  background: #303036;
 }
 .nav-top a {
   color: rgba(255, 255, 255, 0.933);

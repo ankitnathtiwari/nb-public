@@ -1,15 +1,15 @@
 .nav-top-side {
   display: none;
-  background: #000;
+  background: #303036;
 }
 .nav-top-side div a {
   display: none;
 }
 .nav-top-side-button button {
-  background: #000;
+  background: #303036;
   border: none;
   color: #fefefe;
-  margin-top: 20px;
+  margin-top: 40px;
   padding: 10px;
   font-size: 20px;
   opacity: 0.9;
@@ -22,12 +22,12 @@
     top: 20px;
     left: 0px;
     flex-direction: column;
-    background-color: black;
+    background-color: #303036;
     width: 220px;
     height: 90vh;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    z-index: 1000;
+    z-index: #303036;
   }
   .nav-top-side div {
     width: 150px;

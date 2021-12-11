@@ -6,6 +6,8 @@ import { BrowserRouter, Redirect, Route } from "react-router-dom";
 
 import "./index.css";
 import { AllPost } from "../allpost";
+
+
 export const App = () => {
   const [sidebar, setSidebar] = useState(false);
   const handleSidebar = (item) => setSidebar(item);

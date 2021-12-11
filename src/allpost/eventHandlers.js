@@ -1,9 +1,19 @@
-export const fetchCompleted = (state, action) => {
+export const pageChange = (state, action) => {
   return {
     ...state,
     loading: false,
     initLoading: false,
     posts: [...state.posts, ...action.payload],
+  };
+};
+export const topicChange = (state, action) => {
+  return {
+    ...state,
+    loading: false,
+    initLoading: false,
+    topic: action.payload,
+    page: 1,
+    posts: [],
   };
 };
 
@@ -18,7 +28,6 @@ export const handleLoadMore = (state, action) => {
 export const handleQuery = (state, action) => {
   return {
     ...state,
-    query: action.payload,
     posts: [],
     page: 1,
     loading: true,

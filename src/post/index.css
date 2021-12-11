@@ -2,10 +2,19 @@
   margin: 20px;
   background-color: rgb(255, 255, 255);
   width: 40vw;
-  padding: 2vh;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   transition: 0.25s;
+  position: relative;
+}
+.post-share {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2vh;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  color: #303036;
 }
 
 .post_date {
@@ -20,14 +29,24 @@
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
+  border-radius: 4px 0px 0px 0px;
 }
-.post h2 {
+.post-title {
+  margin: 2vh;
+}
+.post-title a {
   margin-top: 10px;
   font-size: 18px;
+  color: #303036;
 }
 .post-para {
+  margin: 2vh;
   margin-top: 10px;
   opacity: 0.7;
+  color: #303036;
+}
+.post_date {
+  margin: 2vh;
 }
 @media only screen and (max-width: 1050px) {
   .post {
@@ -45,14 +64,15 @@
 @media only screen and (max-width: 500px) {
   .post {
     margin: 20px auto;
-    width: 90vw;
+    width: 92vw;
   }
   .post img {
-    width: 90vw;
+    width: 92vw;
     height: 70vw;
     margin-bottom: 20px;
     margin-top: 0px;
     margin-left: 0px;
     margin-right: 0px;
+    border-radius: 4px 4px 0px 0px;
   }
 }
