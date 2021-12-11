@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { testUrl ,sNBDomain} from "../base-url/index";
+import { stagingUrl } from "../base-url/index";
 import "./index.css";
 import {
   FacebookShareButton,
@@ -20,7 +20,7 @@ export const SocialShare = ({ post }) => {
     <div className="social-share">
       <div>
         <WhatsappShareButton
-          url={`${sNBDomain}/?top=singlepost&id=${post._id}`}
+          url={`${stagingUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
           hashtag="#newsbird"
         >
@@ -30,7 +30,7 @@ export const SocialShare = ({ post }) => {
 
       <div>
         <FacebookShareButton
-          url={`${sNBDomain}/?top=singlepost&id=${post._id}`}
+          url={`${stagingUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
           hashtag="#newsbird"
         >
@@ -40,7 +40,7 @@ export const SocialShare = ({ post }) => {
 
       <div>
         <TwitterShareButton
-          url={`${sNBDomain}/?top=singlepost&id=${post._id}`}
+          url={`${stagingUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
           hashtag="#newsbird"
         >
@@ -50,7 +50,7 @@ export const SocialShare = ({ post }) => {
 
       <div>
         <LinkedinShareButton
-          url={`${sNBDomain}/?top=singlepost&id=${post._id}`}
+          url={`${stagingUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
           hashtag="#newsbird"
         >
@@ -60,7 +60,7 @@ export const SocialShare = ({ post }) => {
 
       <div>
         <TelegramShareButton
-          url={`${sNBDomain}/?top=singlepost&id=${post._id}`}
+          url={`${stagingUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
           hashtag="#newsbird"
         >
