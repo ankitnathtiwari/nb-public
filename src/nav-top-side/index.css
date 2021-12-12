@@ -38,7 +38,6 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 5px 0px;
     z-index: #303036;
-  overflow: scroll;
   }
   .nav-top-side div {
     width: 150px;
