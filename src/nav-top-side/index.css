@@ -11,8 +11,8 @@
   border: none;
   color: #fefefe;
   margin-top: 10px;
-  padding: 10px;
-  font-size: 20px;
+  padding: 5px;
+  font-size: 16px;
   opacity: 0.9;
   margin-bottom: 100px;
 }
@@ -51,7 +51,7 @@
   .nav-top-side div a {
     display: block;
     color: #fefefe;
-    font-weight: 450;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: normal;
   }
 }
