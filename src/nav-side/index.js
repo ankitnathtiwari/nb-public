@@ -18,6 +18,15 @@ export const NavSide = () => {
         <Link to='/entertainment'> Entertainment</Link>
       </div>
       <div>
+        <Link to="/?top=national"> National </Link>
+      </div>
+      <div>
+        <Link to="/?top=international"> International</Link>
+      </div>
+      <div>
+        <Link to="/?top=miscellaneous"> Miscellaneous</Link>
+      </div>
+      <div>
         <Link to='/scienceandtech'>Science and Technology</Link>
       </div>
     </div>

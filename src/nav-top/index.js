@@ -25,7 +25,7 @@ export const NavTop = ({ sidebar, handleSidebar }) => {
           </svg> */}
         </div>
         <div className='nav-top-logo'>
-          <Link to='/all'>NewsBird</Link>
+          <Link to='/allpost'>NewsBird</Link>
         </div>
       </div>
       <div className='nav-top-side-bar'>
