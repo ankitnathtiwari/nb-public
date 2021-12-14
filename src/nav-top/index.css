@@ -17,6 +17,8 @@
 .nav-top-logo {
   margin: auto;
   z-index: 1000;
+  display: flex;
+  align-items: center;
 }
 .nav-top a {
   color: #303036;

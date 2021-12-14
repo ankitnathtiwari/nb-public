@@ -1,6 +1,9 @@
 .nav-top-side {
   display: none;
   background: #303036;
+  height: 100vh;
+  position: fixed;
+  overflow-y: scroll;
 }
 .nav-top-side div a {
   display: none;

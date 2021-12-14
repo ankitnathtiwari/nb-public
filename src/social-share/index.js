@@ -15,7 +15,6 @@ import {
 } from "react-share";
 
 export const SocialShare = ({ post }) => {
-
   return (
     <div className="social-share">
       <div>
