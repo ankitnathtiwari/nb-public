@@ -39,12 +39,7 @@ export const Post = ({ post }) => {
 
   return (
     <div className="post">
-      <img
-        src={`${imageUrl}/${post.image}`}
-        alt="News Image"
-        width="200"
-        height="200"
-      />
+      <img src={`${imageUrl}/${post.image}`} alt="News Image" />
 
       <h2 className="post-title">
         <Link to={`/?top=singlepost&id=${post._id}`}>{post.title}</Link>
