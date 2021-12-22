@@ -1,0 +1,31 @@
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import "./index.css";
+import { PostLink } from "./postLink";
+import { VideoLink } from "./videoLink";
+export const BottomNav = ({ positionValue }) => {
+  const [prevScrollpos, setPrevScrollPos] = useState(window.pageYOffset);
+  const bottomNav = useRef();
+  useEffect(() => {
+    window.onscroll = function () {
+      var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        bottomNav.current.style.bottom = "0";
+      } else {
+        bottomNav.current.style.bottom = "-50px";
+      }
+      setPrevScrollPos(currentScrollPos);
+    };
+  }, [window.pageYOffset]);
+  console.log("rernder");
+  return (
+    <div className="bottom-nav" id="bottom-nav" ref={bottomNav}>
+      <div className="bottom-nav-short-posts">
+        <PostLink />
+      </div>
+      <div className="bottom-nav-short-videos">
+        <VideoLink />
+      </div>
+    </div>
+  );
+};
