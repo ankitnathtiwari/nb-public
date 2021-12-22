@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { NavSide } from "../nav-side";
 import { NavTop } from "../nav-top";
-import { PostList } from "../post-list";
-import { BrowserRouter, Redirect, Route } from "react-router-dom";
-
+import {
+  BrowserRouter,
+  Redirect,
+  Route,
+  Switch,
+  useRouteMatch,
+  useLocation,
+} from "react-router-dom";
+import ShortVideos from "../short-videos";
 import "./index.css";
 import { AllPost } from "../allpost";
-
+import { BottomNav } from "../bottom-nav";
 
 export const App = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -14,16 +20,21 @@ export const App = () => {
 
   return (
     <BrowserRouter>
-      <div className='app'>
+      <div className="app">
         <NavTop sidebar={sidebar} handleSidebar={handleSidebar} />
-        <div className='app-content' onClick={() => handleSidebar(false)}>
+        <div className="app-content" onClick={() => handleSidebar(false)}>
           <NavSide />
-          <Route path='/'>
-            <AllPost />
-          </Route>
-
-          {/* <PostList /> */}
+          <Switch>
+            <Route path="/videos">
+              <ShortVideos />
+            </Route>
+            <Route path="/">
+              <AllPost />
+            </Route>
+          </Switch>
         </div>
+
+        <BottomNav />
       </div>
     </BrowserRouter>
   );

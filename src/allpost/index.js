@@ -16,6 +16,7 @@ export const AllPost = () => {
   const [state, dispatch] = useReducer(reducer, search, initFun);
   useFetch(state, dispatch, search);
 
+  console.log("all post render");
   if (state.posts.length === 0) {
     if (state.loading || state.initLoading) {
       return (

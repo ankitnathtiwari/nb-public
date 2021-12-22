@@ -8,11 +8,11 @@ export const stagingUrl = "http://3.110.33.147";
 export const prodReporterUrl = "https://reporters.newsbird.live";
 export const reporterDomainStaging = "3.110.33.147";
 
-export const mainUrl = prodSecureUrl;
+export const mainUrl = mockUrl;
 export const shareUrl = mainUrl;
-export const baseUrl = `${mainUrl}/json_api/post/allpost`;
+export const baseUrl = `${mainUrl}/json_api`;
 
-export const imageUrl = s3imageUrl;
+export const imageUrl = mockUrl;
 
 export const topics = [
   "",
