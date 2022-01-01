@@ -1,5 +1,5 @@
 export const prodIp = "http://15.207.52.81";
-export const s3imageUrl = "https://nb-post-image.s3.us-east-2.amazonaws.com";
+export const s3imageUrl = "https://nb-post-image-mum.s3.ap-south-1.amazonaws.com";
 export const localApiUrl = "http://localhost:8000";
 export const mockUrl = "http://localhost:8080";
 export const prodSecureUrl = "https://newsbird.live";
