@@ -40,7 +40,7 @@ module.exports = {
   ],
 
   //devServer historyApiFallback for react router
-  devtool: "source-map",
+  // devtool: "source-map",
   devServer: {
     historyApiFallback: true,
     contentBase: "./",
