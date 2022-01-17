@@ -3,8 +3,8 @@ import axios from "axios";
 import { baseUrl } from "../base-url";
 import regeneratorRuntime from "regenerator-runtime";
 
-const fetchData = async (top, page) => {
-  const url = `${baseUrl}/video/allvideo?top=${top}&&page=${page}`;
+const fetchData = async (top, page, videoPostId) => {
+  const url = `${baseUrl}/video/allvideo?top=${top}&&page=${page}&&id=${videoPostId}`;
   try {
     const res = await axios.get(url);
     return { status: true, data: res.data };
@@ -13,14 +13,20 @@ const fetchData = async (top, page) => {
   }
 };
 
-export const useFetch = (propTopic, page, setPage, videoListRef) => {
+export const useFetch = (
+  propTopic,
+  page,
+  setPage,
+  videoListRef,
+  videoPostId
+) => {
   const [videoList, setVideoList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(false);
   const [topic, setTopic] = useState("allpost");
 
-  const getVideoList = async (propTopic, page) => {
-    const result = await fetchData(propTopic, page);
+  const getVideoList = async (propTopic, page, videoPostId) => {
+    const result = await fetchData(propTopic, page, videoPostId);
 
     if (result.status) {
       setVideoList(result.data);
@@ -48,7 +54,7 @@ export const useFetch = (propTopic, page, setPage, videoListRef) => {
   }
 
   useEffect(() => {
-    getVideoList(propTopic, page);
+    getVideoList(propTopic, page, videoPostId);
     return () => {};
   }, [topic]);
 

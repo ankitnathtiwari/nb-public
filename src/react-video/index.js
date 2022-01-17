@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
-import { videoUrl } from "../base-url";
+import { videoUrl, mainUrl } from "../base-url";
 import { SocialShareButton } from "../social-share-button";
 import moment from "moment";
 import "./index.css";
@@ -105,7 +105,7 @@ export const ReactVideo = ({ item }) => {
       </div>
       <h4 className="short-video-with-desc-video-title">{item.title}</h4>
       <div className="video-post-social-share-button">
-        <SocialShareButton post={item} />
+        <SocialShareButton post={item} shareUrl={`${mainUrl}/videos`} />
       </div>
     </div>
   );

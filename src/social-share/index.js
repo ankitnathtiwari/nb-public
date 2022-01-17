@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { shareUrl } from "../base-url/index";
 import "./index.css";
 import {
   FacebookShareButton,
@@ -14,7 +13,7 @@ import {
   TwitterIcon,
 } from "react-share";
 
-export const SocialShare = ({ post }) => {
+export const SocialShare = ({ post, shareUrl }) => {
   return (
     <div className="social-share">
       <div>

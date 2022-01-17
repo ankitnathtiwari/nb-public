@@ -13,6 +13,7 @@ const width = "90vw";
 const ShortVideos = (props) => {
   let searchParams = new URLSearchParams(useLocation().search);
   const topic = searchParams.get("top");
+  const id = searchParams.get("id");
   const [page, setPage] = useState(1);
   const videoListRef = useRef();
 
@@ -20,7 +21,8 @@ const ShortVideos = (props) => {
     topic ? topic : "allpost",
     page,
     setPage,
-    videoListRef
+    videoListRef,
+    id ? id : null
   );
 
   if (loading) {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./index.css";
 import moment from "moment";
-import { imageUrl } from "../base-url/index";
+import { imageUrl, mainUrl } from "../base-url/index";
 import { Link } from "react-router-dom";
 import { SocialShare } from "../social-share";
 import { SocialShareButton } from "../social-share-button";
@@ -25,7 +25,7 @@ export const Post = ({ post }) => {
         {moment(post.pub_date).format(" h:m a, on Do MMM YYYY ")}
       </p>
       <div className="post-social-share-button">
-        <SocialShareButton post={post} />
+        <SocialShareButton post={post} shareUrl={mainUrl} />
       </div>
     </div>
   );
