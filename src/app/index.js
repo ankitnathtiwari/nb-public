@@ -28,8 +28,11 @@ export const App = () => {
             <Route path="/videos">
               <ShortVideos />
             </Route>
-            <Route path="/">
+            <Route path="/posts">
               <AllPost />
+            </Route>
+            <Route exact path="/">
+              <Redirect to="/videos" />
             </Route>
           </Switch>
         </div>

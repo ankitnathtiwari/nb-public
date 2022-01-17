@@ -17,7 +17,7 @@ export const Post = ({ post }) => {
       />
 
       <h2 className="post-title">
-        <Link to={`/?top=singlepost&id=${post._id}`}>{post.title}</Link>
+        <Link to={`/posts?top=singlepost&id=${post._id}`}>{post.title}</Link>
       </h2>
 
       <p className="post-para">{post.content}</p>
@@ -25,7 +25,7 @@ export const Post = ({ post }) => {
         {moment(post.pub_date).format(" h:m a, on Do MMM YYYY ")}
       </p>
       <div className="post-social-share-button">
-        <SocialShareButton post={post} shareUrl={mainUrl} />
+        <SocialShareButton post={post} shareUrl={`${mainUrl}/posts`} />
       </div>
     </div>
   );

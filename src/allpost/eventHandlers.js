@@ -9,13 +9,13 @@ export const pageChange = (state, action) => {
 export const topicChange = (state, action) => {
   return {
     ...state,
-    loading: false,
+    loading: true,
     initLoading: false,
     topic: action.payload,
     page: 1,
     posts: [],
   };
-};
+};  
 
 export const handleLoadMore = (state, action) => {
   return {

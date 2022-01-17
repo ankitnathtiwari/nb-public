@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 export const PostLink = () => {
   return (
-    <Link to="/">
+    <Link to="/posts">
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
