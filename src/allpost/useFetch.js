@@ -20,7 +20,7 @@ export const useFetch = (state, dispatch, query) => {
   let searchParams = new URLSearchParams(query);
   const topic = searchParams.get("top");
 
-  const url = `${baseUrl}${query}&page=${state.page}`;
+  const url = `${baseUrl}/post/allpost/${query}&page=${state.page}`;
 
   useEffect(() => {
     if (topic !== state.topic) {

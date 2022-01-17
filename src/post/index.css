@@ -51,6 +51,11 @@
 .post_date {
   margin: 2vh;
 }
+
+.post-social-share-button {
+  text-align: right;
+  margin: 12px;
+}
 @media only screen and (max-width: 1050px) {
   .post {
     margin: 20px auto;

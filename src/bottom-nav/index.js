@@ -7,7 +7,7 @@ export const BottomNav = ({ positionValue }) => {
   const [prevScrollpos, setPrevScrollPos] = useState(window.pageYOffset);
   const bottomNav = useRef();
   useEffect(() => {
-    window.onscroll = function () {
+    const handleScroll = () => {
       var currentScrollPos = window.pageYOffset;
       if (prevScrollpos > currentScrollPos) {
         bottomNav.current.style.bottom = "0";
@@ -15,6 +15,10 @@ export const BottomNav = ({ positionValue }) => {
         bottomNav.current.style.bottom = "-50px";
       }
       setPrevScrollPos(currentScrollPos);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [window.pageYOffset]);
   console.log("rernder");
