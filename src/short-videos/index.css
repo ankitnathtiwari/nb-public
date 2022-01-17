@@ -1,41 +1,4 @@
 .short-videos {
   margin: auto;
-  border-radius: 12px;
   margin-top: 15vh;
-}
-
-.short-video-with-desc {
-  height: 390px;
-  width: 90vw;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  margin-bottom: 8vh;
-  border-radius: 12px;
-}
-.short-video-with-desc-video-title {
-  margin: 12px;
-  margin-top: 20px;
-  font-weight: 400;
-  color: #303036;
-}
-
-.react-player .react-player__preview {
-  height: 240px !important;
-}
-.react-player {
-  width: 90vw !important;
-  height: auto !important;
-  margin: auto;
-  border-radius: 12px 12px 0px 0px;
-  overflow: hidden;
-  background-color: #000;
-}
-.react-player video {
-  width: 90vw !important;
-  height: 240px !important;
-  background-color: #303036;
-}
-.video-post-social-share-button {
-  text-align: right;
-  margin: 12px;
-  margin-top: 20px;
 }

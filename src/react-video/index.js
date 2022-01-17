@@ -2,13 +2,15 @@ import React, { useState, useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
 import { videoUrl } from "../base-url";
 import { SocialShareButton } from "../social-share-button";
+import moment from "moment";
 import "./index.css";
-const width = "90vw";
+const width = "100vw";
 
 export const ReactVideo = ({ item }) => {
   const [volume, setVolume] = useState(0.6);
   const [seekValue, setSeekValue] = useState(0);
   const [playValue, setPlayValue] = useState(false);
+  const [playTime, setPlayTime] = useState(0);
   const player = useRef();
   const videoItemRef = useRef();
   const handleSeek = (e) => {
@@ -57,6 +59,7 @@ export const ReactVideo = ({ item }) => {
           className="react-player"
           onProgress={(e) => {
             setSeekValue(Number(e.played) * 100);
+            setPlayTime(e.playedSeconds);
           }}
         />
 
@@ -92,7 +95,7 @@ export const ReactVideo = ({ item }) => {
               type="range"
               min="1"
               max="100"
-              style={{ width: "90vw" }}
+              style={{ width: "98vw" }}
               value={seekValue}
               onChange={handleSeek}
               className="react-player-seek-slider"
