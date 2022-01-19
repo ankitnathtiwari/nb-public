@@ -45,7 +45,9 @@ const ShortVideos = (props) => {
           </div>
         );
       })}
-      <Button onClick={() => setPage(page + 1)}> Load More </Button>
+      <div className="load-more-button">
+        <Button onClick={() => setPage(page + 1)}> Load More </Button>
+      </div>
     </div>
   );
 };

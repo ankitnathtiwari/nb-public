@@ -5,7 +5,7 @@
 }
 
 .nav-top-bar {
-  height: 10vh;
+  height: 8vw;
   width: 100vw;
   background-color: #fefefe;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -33,7 +33,16 @@
 /* .nav-top-side-bar {
   position: absolute;
 } */
+
+@media only screen and (max-width: 1100px) {
+  .nav-top-bar {
+    height: 8vw;
+  }
+}
 @media only screen and (max-width: 800px) {
+  .nav-top-bar {
+    height: 10vw;
+  }
   .nav-top-burger-icon {
     display: block;
     margin: auto 30px;
@@ -46,6 +55,22 @@
   }
 }
 @media only screen and (max-width: 500px) {
+  .nav-top-bar {
+    height: 14vw;
+  }
+  .nav-top a {
+    font-size: 20px;
+    font-weight: 900;
+  }
+  .nav-top-logo {
+    margin-right: 3vw;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .nav-top-bar {
+    height: 15vw;
+  }
   .nav-top a {
     font-size: 20px;
     font-weight: 900;

@@ -13,11 +13,16 @@ import ShortVideos from "../short-videos";
 import "./index.css";
 import { AllPost } from "../allpost";
 import { BottomNav } from "../bottom-nav";
+import ReactGA from "react-ga";
 
 export const App = () => {
   const [sidebar, setSidebar] = useState(false);
   const handleSidebar = (item) => setSidebar(item);
 
+  useEffect(() => {
+    ReactGA.initialize("UA-215888484-1");
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
   return (
     <BrowserRouter>
       <div className="app">

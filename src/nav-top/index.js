@@ -53,7 +53,7 @@ export const NavTop = ({ sidebar, handleSidebar }) => {
             </svg>
           </div>
           <div>
-            <Link to="/allpost">NEWSBIRD</Link>
+            <Link to="/videos">NEWSBIRD</Link>
           </div>
         </div>
       </div>

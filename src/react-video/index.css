@@ -5,7 +5,7 @@
 }
 
 .short-video-with-desc {
-  width: 100vw;
+  width: 45vw;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   margin-bottom: 8vh;
   border-radius: 0px;
@@ -15,15 +15,21 @@
   margin-left: 12px;
   margin-right: 12px;
   margin-top: 20px;
+  font-size: 18px;
   font-weight: 400;
   color: #303036;
+  font-family: "Khula", sans-serif;
+  font-family: "Mukta", sans-serif;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  font-family: "Vesper Libre", serif;
+  line-height: 1.4;
 }
 
 .react-player .react-player__preview {
-  height: 240px !important;
+  height: 32vw !important;
 }
 .react-player {
-  width: 100vw !important;
+  width: 45vw !important;
   height: auto !important;
   margin: auto;
   border-radius: 0px;
@@ -31,10 +37,9 @@
   background-color: #000;
 }
 .react-player video {
-  width: 100vw !important;
-  height: 240px !important;
+  width: 45vw !important;
+  height: 32vw !important;
   background-color: #303036;
-  object-fit: cover;
 }
 .video-post-social-share-button {
   text-align: right;
@@ -43,18 +48,18 @@
 
 .react-player-play-button {
   position: absolute;
-  left: 35vw;
-  top: 12vh;
+  left: 44%;
+  top: 30%;
   z-index: 1;
 }
 .react-player-seek {
   position: absolute;
-  top: 220px;
+  bottom: 8vw;
 }
 
 .react-player-seek-slider {
   -webkit-appearance: none;
-  width: 100%;
+  width: 45vw;
   height: 4px;
   background: #ff0000;
 }
@@ -75,4 +80,110 @@
   border-radius: 5px;
   background: #000000;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 1050px) {
+  .short-video-with-desc {
+    width: 60vw;
+  }
+  .react-player {
+    width: 60vw !important;
+  }
+  .react-player .react-player__preview {
+    height: 40vw !important;
+  }
+  .react-player video {
+    width: 60vw !important;
+  }
+  .react-player-seek {
+    position: absolute;
+    bottom: 12vw;
+  }
+  .react-player-seek-slider {
+    width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .short-video-with-desc {
+    width: 90vw;
+  }
+  .react-player {
+    width: 90vw !important;
+  }
+  .react-player .react-player__preview {
+    height: 60vw !important;
+  }
+  .react-player video {
+    width: 90vw !important;
+    height: 60vw !important;
+  }
+  .react-player-seek {
+    position: absolute;
+    bottom: 15vw;
+  }
+  .react-player-seek-slider {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .short-video-with-desc {
+    width: 90vw;
+  }
+  .react-player {
+    width: 90vw !important;
+  }
+  .react-player .react-player__preview {
+    height: 60vw !important;
+  }
+  .react-player video {
+    width: 90vw !important;
+    height: 60vw !important;
+  }
+  .react-player-seek {
+    position: absolute;
+    top: 72%;
+  }
+  .react-player-seek-slider {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .react-player-seek {
+    position: absolute;
+    top: 65%;
+  }
+  .react-player-play-button {
+    left: 44%;
+    top: 20%;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .short-video-with-desc {
+    width: 100vw;
+  }
+  .react-player {
+    width: 100vw !important;
+  }
+  .react-player .react-player__preview {
+    height: 67vw !important;
+  }
+  .react-player video {
+    width: 100vw !important;
+    height: 67vw !important;
+  }
+  .react-player-seek {
+    position: absolute;
+    top: 62%;
+  }
+  .react-player-seek-slider {
+    width: 100vw;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .react-player-seek {
+    position: absolute;
+    top: 59%;
+  }
 }

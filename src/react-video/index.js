@@ -95,7 +95,6 @@ export const ReactVideo = ({ item }) => {
               type="range"
               min="1"
               max="100"
-              style={{ width: "98vw" }}
               value={seekValue}
               onChange={handleSeek}
               className="react-player-seek-slider"

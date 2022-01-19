@@ -10,9 +10,9 @@ export const BottomNav = ({ positionValue }) => {
     const handleScroll = () => {
       var currentScrollPos = window.pageYOffset;
       if (prevScrollpos > currentScrollPos) {
-        bottomNav.current.style.bottom = "0";
+        bottomNav.current.style.bottom = "0vh";
       } else {
-        bottomNav.current.style.bottom = "-50px";
+        bottomNav.current.style.bottom = "-8vh";
       }
       setPrevScrollPos(currentScrollPos);
     };
@@ -21,7 +21,7 @@ export const BottomNav = ({ positionValue }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [window.pageYOffset]);
-  console.log("rernder");
+
   return (
     <div className="bottom-nav" id="bottom-nav" ref={bottomNav}>
       <div className="bottom-nav-short-posts">
