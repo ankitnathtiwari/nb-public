@@ -56,7 +56,7 @@
 }
 @media only screen and (max-width: 500px) {
   .nav-top-bar {
-    height: 14vw;
+    height: 15vw;
   }
   .nav-top a {
     font-size: 20px;
@@ -69,7 +69,7 @@
 
 @media only screen and (max-width: 420px) {
   .nav-top-bar {
-    height: 15vw;
+    height: 16vw;
   }
   .nav-top a {
     font-size: 20px;
