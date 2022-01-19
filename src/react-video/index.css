@@ -16,13 +16,9 @@
   margin-right: 12px;
   margin-top: 20px;
   font-size: 18px;
-  font-weight: 400;
   color: #303036;
-  font-family: "Khula", sans-serif;
-  font-family: "Mukta", sans-serif;
   font-family: "Noto Sans Devanagari", sans-serif;
-  font-family: "Vesper Libre", serif;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .react-player .react-player__preview {

@@ -40,12 +40,16 @@
   margin-top: 10px;
   font-size: 18px;
   color: #303036;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  line-height: 1.2;
 }
 .post-para {
   margin: 2vh;
   margin-top: 10px;
-  opacity: 0.7;
+  opacity: 0.75;
   color: #303036;
+  font-family: "Noto Sans Devanagari", sans-serif;
+  line-height: 1.4;
 }
 .post_date {
   margin: 2vh;
