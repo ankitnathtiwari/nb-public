@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactPlayer from "react-player";
-import { videoUrl, mainUrl } from "../base-url";
+import { videoUrl, mainUrl, thumbnailUrl } from "../base-url";
 import { SocialShareButton } from "../social-share-button";
 import moment from "moment";
 import "./index.css";
@@ -55,7 +55,7 @@ export const ReactVideo = ({ item }) => {
           controls={false}
           playing={playValue}
           volume={volume}
-          light={`${videoUrl}/${item.thumbNail}`}
+          light={`${thumbnailUrl}/${item.thumbNail}`}
           className="react-player"
           onProgress={(e) => {
             setSeekValue(Number(e.played) * 100);
