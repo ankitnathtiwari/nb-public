@@ -39,7 +39,7 @@ export const VideoLink = () => {
                 transform="translate(281 768)"
                 fill="#fff"
                 stroke="red"
-                stroke-width="2"
+                // stroke-width="2"
               >
                 <rect width="40" height="27" rx="8" stroke="none" />
                 <rect x="1" y="1" width="38" height="25" rx="7" fill="none" />

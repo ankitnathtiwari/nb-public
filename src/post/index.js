@@ -22,7 +22,7 @@ export const Post = ({ post }) => {
 
       <p className="post-para">{post.content}</p>
       <p className="post_date">
-        {moment(post.pub_date).format(" h:m a, on Do MMM YYYY ")}
+        {moment(post.pub_date).startOf("hours").fromNow()}
       </p>
       <div className="post-social-share-button">
         <SocialShareButton post={post} shareUrl={`${mainUrl}/posts`} />

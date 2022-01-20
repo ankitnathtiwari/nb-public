@@ -104,6 +104,9 @@ export const ReactVideo = ({ item }) => {
       </div>
       <h4 className="short-video-with-desc-video-title">{item.title}</h4>
       <div className="video-post-social-share-button">
+        <p className="video-post-social-share-button-time">
+          {moment(item.pub_date).startOf("hours").fromNow()}
+        </p>
         <SocialShareButton post={item} shareUrl={`${mainUrl}/videos`} />
       </div>
     </div>

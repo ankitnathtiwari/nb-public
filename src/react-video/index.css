@@ -38,8 +38,12 @@
   background-color: #303036;
 }
 .video-post-social-share-button {
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
   padding: 12px;
+}
+.video-post-social-share-button-time {
+  color: rgb(121, 121, 121);
 }
 
 .react-player-play-button {
