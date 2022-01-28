@@ -3,11 +3,11 @@ export const localApiUrl = "http://localhost:8000";
 export const mockUrl = "http://localhost:8080";
 export const prodSecureUrl = "https://newsbird.live";
 export const prodUrl = "http://newsbird.live";
-export const stagingUrl = "http://65.0.18.242";
+export const stagingUrl = "http://staging.newsbird.live";
 export const prodReporterUrl = "https://reporters.newsbird.live";
 export const reporterDomainStaging = "3.110.33.147";
 
-//move video image and thumbnail url config to backend
+// move video image and thumbnail url config to backend
 
 export const stagingVideoUrl =
   "https://nb-test-video-mum.s3.ap-south-1.amazonaws.com";
