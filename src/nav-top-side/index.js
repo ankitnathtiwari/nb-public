@@ -1,10 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useRouteMatch, useLocation, useHistory } from "react-router-dom";
 import "./index.css";
-
+import { globalContext } from "../app";
+import { Button } from "../shared/button";
+import axios from "axios";
+import { baseUrl } from "../base-url";
 export const NavTopSide = ({ displaySidebar, handleSidebar }) => {
+  const { user, setUser, openModal, setOpenModal } = useContext(globalContext);
+
+  const handleSignIn = () => {
+    if (user.auth) {
+      return null;
+    }
+    handleSidebar(false);
+    return setOpenModal(true);
+  };
+
+  const handleLogout = async () => {
+    const logoutData = await axios.get(`${baseUrl}/auth/logout`, {
+      withCredentials: true,
+    });
+    if (logoutData.data.status) {
+      setUser({ auth: false, username: "", _id: "" });
+    }
+  };
   return displaySidebar ? (
     <div className="nav-top-side">
+      <div className="nav-top-side-username">
+        <p onClick={handleSignIn}>
+          {user.auth ? `Hi, ${user.username} !` : "SignIn"}
+        </p>
+      </div>
+
       <div className="nav-top-side-instruction">
         <p>Topics</p>
       </div>
@@ -34,6 +61,9 @@ export const NavTopSide = ({ displaySidebar, handleSidebar }) => {
         <Link to="?top=scienceandtech">Science and Technology</Link>
       </div>
 
+      <div className="nav-top-side-close">
+        <button onClick={handleLogout}>Logout</button>
+      </div>
       <div className="nav-top-side-close">
         <button onClick={() => handleSidebar(false)}>Close</button>
       </div>

@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import "./index.css";
-export const Button = ({ children, onClick, disabled, className }) => {
+import "./followButton.css";
+export const FollowButton = ({ children, onClick, disabled, className }) => {
   return disabled ? (
     <button
       disabled
       onClick={() => onClick()}
-      className={className ? className : "button"}
+      className={className ? className : "follow-button"}
     >
       {children}
     </button>
   ) : (
     <button
-      className={className ? className : "button"}
+      className={className ? className : "follow-button"}
       onClick={() => onClick()}
     >
       {children}

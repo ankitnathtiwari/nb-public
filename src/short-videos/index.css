@@ -2,6 +2,12 @@
   margin: auto;
   margin-top: 12vh;
 }
+.short-videos-filter {
+  margin: auto;
+  margin-top: 12vh;
+  filter: brightness(0.2);
+  backdrop-filter: brightness(0.6);
+}
 .load-more-button {
   margin-bottom: 20vh;
 }

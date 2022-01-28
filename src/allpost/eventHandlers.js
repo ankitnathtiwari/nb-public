@@ -3,7 +3,7 @@ export const pageChange = (state, action) => {
     ...state,
     loading: false,
     initLoading: false,
-    posts: [...state.posts, ...action.payload],
+    posts: [...state.posts, ...action.payload.postFeed],
   };
 };
 export const topicChange = (state, action) => {
@@ -15,7 +15,7 @@ export const topicChange = (state, action) => {
     page: 1,
     posts: [],
   };
-};  
+};
 
 export const handleLoadMore = (state, action) => {
   return {

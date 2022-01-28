@@ -18,10 +18,22 @@
   font-size: 16px;
   opacity: 0.9;
 }
-.nav-top-side-instruction{
+.nav-top-side-instruction {
   border-bottom: 1px solid #777777;
   margin-top: 2vh;
 }
+.nav-top-side-username {
+  border-bottom: 1px solid #777777;
+  margin-top: 2vh;
+}
+
+.nav-top-side-username p {
+  color: #fefefe;
+  font-size: 16px;
+  margin: 0px;
+  padding: 1px;
+}
+
 .nav-top-side-instruction p {
   color: #999898;
   margin: 0px;

@@ -1,18 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import ReactPlayer from "react-player";
 import { videoUrl, mainUrl, thumbnailUrl } from "../base-url";
 import { SocialShareButton } from "../social-share-button";
 import moment from "moment";
 import "./index.css";
+import { Button } from "../shared/button";
+import axios from "axios";
 const width = "100vw";
+import { globalContext } from "../app";
+import { baseUrl } from "../base-url";
+import { FollowButton } from "../shared/button/followButton";
 
-export const ReactVideo = ({ item }) => {
+export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
+  const { user, setUser, openModal, setOpenModal } = useContext(globalContext);
   const [volume, setVolume] = useState(0.6);
   const [seekValue, setSeekValue] = useState(0);
   const [playValue, setPlayValue] = useState(false);
   const [playTime, setPlayTime] = useState(0);
+  const [playDuration, setPlayDuration] = useState(0);
   const player = useRef();
   const videoItemRef = useRef();
+
   const handleSeek = (e) => {
     setSeekValue(e.target.value);
     player.current.seekTo(Number(e.target.value) / 100);
@@ -45,21 +53,54 @@ export const ReactVideo = ({ item }) => {
     };
   });
 
+  const handleFollow = async (item) => {
+    if (!user.auth) {
+      return setOpenModal(true);
+    }
+    if (!item.followStatus) {
+      const followResponse = await axios({
+        method: "post",
+        url: `${baseUrl}/public/follow?followed=${item.user}`,
+        withCredentials: true,
+      });
+      if (followResponse.data.status) {
+        setFollowingUser({ status: true, user: item.user });
+      }
+    } else {
+      const followResponse = await axios({
+        method: "post",
+        url: `${baseUrl}/public/unfollow?followed=${item.user}`,
+        withCredentials: true,
+      });
+      if (followResponse.data.status) {
+        //update followStatus of list
+        setFollowingUser({ status: false, user: item.user });
+      }
+    }
+  };
+
   return (
     <div className="short-video-with-desc" key={item._id} ref={videoItemRef}>
       <div onClick={() => setPlayValue(!playValue)}>
         <ReactPlayer
           ref={player}
-          url={`${videoUrl}/${item.video}`}
+          url={`${item.url.video}/${item.video}`}
           width={width}
           controls={false}
           playing={playValue}
           volume={volume}
-          light={`${thumbnailUrl}/${item.thumbNail}`}
+          light={`${item.url.thumbnail}/${item.thumbNail}`}
           className="react-player"
           onProgress={(e) => {
             setSeekValue(Number(e.played) * 100);
             setPlayTime(e.playedSeconds);
+          }}
+          onDuration={(e) => {
+            setPlayDuration(e);
+            console.log(e, "duration react player");
+          }}
+          onClickPreview={(e) => {
+            console.log({ e }, "clikc on priview");
           }}
         />
 
@@ -100,13 +141,23 @@ export const ReactVideo = ({ item }) => {
               className="react-player-seek-slider"
             />
           ) : null}
+          {/* <p>{moment().startOf("day").seconds(playTime).format("mm:ss")}</p>
+          <p>{moment().startOf("day").seconds(playDuration).format("mm:ss")}</p> */}
         </div>
       </div>
       <h4 className="short-video-with-desc-video-title">{item.title}</h4>
       <div className="video-post-social-share-button">
-        <p className="video-post-social-share-button-time">
+        <div className="video-post-social-share-button-time">
           {moment(item.pub_date).startOf("hours").fromNow()}
-        </p>
+          <p>{`by ${item.authorName}`}</p>
+        </div>
+
+        <div className="video-post-follow-button">
+          <FollowButton onClick={() => handleFollow(item)}>
+            {item.followStatus ? "Following" : "Follow"}
+          </FollowButton>
+        </div>
+
         <SocialShareButton post={item} shareUrl={`${mainUrl}/videos`} />
       </div>
     </div>

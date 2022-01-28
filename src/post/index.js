@@ -21,11 +21,14 @@ export const Post = ({ post }) => {
       </h2>
 
       <p className="post-para">{post.content}</p>
-      <p className="post_date">
-        {moment(post.pub_date).startOf("hours").fromNow()}
-      </p>
-      <div className="post-social-share-button">
-        <SocialShareButton post={post} shareUrl={`${mainUrl}/posts`} />
+      <div className="post-date-share-author">
+        <div className="post_date">
+          {moment(post.pub_date).startOf("hours").fromNow()}
+          {post.authorName ? <p>{`by ${post.authorName}`}</p> : null}
+        </div>
+        <div className="post-social-share-button">
+          <SocialShareButton post={post} shareUrl={`${mainUrl}/posts`} />
+        </div>
       </div>
     </div>
   );

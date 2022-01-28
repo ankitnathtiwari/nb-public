@@ -1,0 +1,12 @@
+.google-login span {
+  color: #303036;
+  border-radius: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.google-login button {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.google-login {
+  text-align: center;
+  margin-top: 10vh;
+}

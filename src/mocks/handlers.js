@@ -29,25 +29,28 @@ export const handlers = [
     return res(ctx.json([]));
   }),
 
-  rest.get(`${baseUrl}/videos`, (req, res, ctx) => {
-    if (req.url.searchParams.get("top") === "singlepost") {
-      let post = posts1.filter(
-        (item) => item._id === Number(req.url.searchParams.get("id"))
-      );
-      return res(ctx.json(post));
-    }
+  rest.get(
+    `${baseUrl}/video/allvideo?top=allpost&&page=1&&id=null`,
+    (req, res, ctx) => {
+      if (req.url.searchParams.get("top") === "singlepost") {
+        let post = posts1.filter(
+          (item) => item._id === Number(req.url.searchParams.get("id"))
+        );
+        return res(ctx.json(post));
+      }
 
-    if (req.url.searchParams.get("page") == 1) {
-      return res(ctx.json(videoPosts1));
+      if (req.url.searchParams.get("page") == 1) {
+        return res(ctx.json(videoPosts1));
+      }
+      if (req.url.searchParams.get("page") == 2) {
+        return res(ctx.json(videoPosts2));
+      }
+      if (req.url.searchParams.get("page") == 3) {
+        return res(ctx.json(videoPosts3));
+      }
+      return res(ctx.json([]));
     }
-    if (req.url.searchParams.get("page") == 2) {
-      return res(ctx.json(videoPosts2));
-    }
-    if (req.url.searchParams.get("page") == 3) {
-      return res(ctx.json(videoPosts3));
-    }
-    return res(ctx.json([]));
-  }),
+  ),
 
   rest.get(`${imageUrl}/fakeimage.jpg`, async (_, res, ctx) => {
     // Convert "base64" image to "ArrayBuffer".

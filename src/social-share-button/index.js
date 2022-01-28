@@ -19,6 +19,7 @@ export const SocialShareButton = ({ post, shareUrl }) => {
       document.removeEventListener("click", closeModel);
     };
   });
+
   return (
     <div
       className="social-share-button"

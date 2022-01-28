@@ -4,10 +4,10 @@ import { baseUrl } from "../base-url";
 import regeneratorRuntime from "regenerator-runtime";
 
 const fetchData = async (top, page, videoPostId) => {
-  const url = `${baseUrl}/video/allvideo?top=${top}&&page=${page}&&id=${videoPostId}`;
+  const url = `${baseUrl}/public/video?top=${top}&&page=${page}&&id=${videoPostId}`;
   try {
-    const res = await axios.get(url);
-    return { status: true, data: res.data };
+    const res = await axios.get(url, { withCredentials: true });
+    return { status: true, data: res.data.videoPosts };
   } catch (err) {
     return { status: false, data: err.message };
   }
@@ -17,8 +17,9 @@ export const useFetch = (
   propTopic,
   page,
   setPage,
-  videoListRef,
-  videoPostId
+  videoPostId,
+  followingUser,
+  user
 ) => {
   const [videoList, setVideoList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -52,6 +53,32 @@ export const useFetch = (
     setPage(1);
     setTopic(propTopic);
   }
+  // followingUser
+  useEffect(() => {
+    if (!user.auth) {
+      const newList = videoList.map((item) => {
+        return { ...item, followStatus: false };
+      });
+      console.log(newList, "new video list");
+      setVideoList(newList);
+    } else {
+      setVideoList(
+        videoList.map((item) => {
+          if (item.user === followingUser.user) {
+            if (followingUser.status) {
+              item.followStatus = true;
+              return item;
+            } else {
+              item.followStatus = false;
+              return item;
+            }
+          }
+          return item;
+        })
+      );
+    }
+    return () => {};
+  }, [followingUser, user.auth]);
 
   useEffect(() => {
     getVideoList(propTopic, page, videoPostId);
@@ -64,11 +91,6 @@ export const useFetch = (
     }
     return () => {};
   }, [page]);
-
+  console.log({ videoList }, "inside usefetch");
   return [videoList, loading, err];
 };
-
-// let searchParams = new URLSearchParams(query);
-// const topic = searchParams.get("top");
-
-// const url = `${baseUrl}${query}&page=${state.page}`;

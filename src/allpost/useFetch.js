@@ -4,7 +4,7 @@ import { baseUrl } from "../base-url";
 
 const getDataOnPageChange = (url, topic, dispatch) => {
   axios
-    .get(url)
+    .get(url, { withCredentials: true })
     .then((res) => {
       dispatch({ type: "PAGE_CHANGE", payload: res.data });
     })
@@ -20,7 +20,7 @@ export const useFetch = (state, dispatch, query) => {
   let searchParams = new URLSearchParams(query);
   const topic = searchParams.get("top");
 
-  const url = `${baseUrl}/post/allpost/${query}&page=${state.page}`;
+  const url = `${baseUrl}/public/post${query}&page=${state.page}`;
 
   useEffect(() => {
     if (topic !== state.topic) {

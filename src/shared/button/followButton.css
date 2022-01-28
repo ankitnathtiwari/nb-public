@@ -1,0 +1,25 @@
+.follow-button {
+  background: #eeeeee;
+  width: 100px;
+  height: 38px;
+  display: block;
+  border: none;
+  margin: 5px auto;
+  text-decoration: none;
+  color: #303036;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.follow-button:hover {
+  background: #eeeeee;
+  color: #303036;
+}
+
+.follow-button:disabled {
+  opacity: 0.5;
+}

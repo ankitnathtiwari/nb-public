@@ -1,4 +1,3 @@
-
 .short-video-with-desc {
   width: 45vw;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
@@ -34,15 +33,19 @@
   background-color: #303036;
 }
 .video-post-social-share-button {
+  margin: 12px;
   display: flex;
+  height: 20vw;
   justify-content: space-between;
-  padding: 12px;
+  align-items: center;
 }
 .video-post-social-share-button-time {
   color: rgb(121, 121, 121);
   font-size: 12px;
 }
-
+.video-post-follow-button {
+  margin-left: 30vw;
+}
 .react-player-play-button {
   position: absolute;
   left: 44%;
