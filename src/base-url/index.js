@@ -23,7 +23,7 @@ export const prodImageUrl =
 export const prodthumbnailUrl =
   "https://nb-video-thumbnail-mum.s3.ap-south-1.amazonaws.com";
 
-export const mainUrl = localApiUrl;
+export const mainUrl = stagingUrl;
 export const baseUrl = `${mainUrl}/json_api`;
 export const shareUrl = mainUrl;
 
