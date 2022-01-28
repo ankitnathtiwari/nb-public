@@ -28,9 +28,12 @@ export const App = () => {
   console.log({ data });
   useEffect(() => {
     const initAuthVerification = async () => {
-      const data = await axios.get(`${baseUrl}/auth/publicAuth`, {
+      const data = await axios({
+        method: "get",
+        url: `${baseUrl}/auth/publicAuth`,
         withCredentials: true,
       });
+
       if (data.data.status) {
         setUser(data.data.user);
       }
