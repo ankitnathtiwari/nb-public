@@ -7,6 +7,7 @@
   margin-top: 12vh;
   filter: brightness(0.2);
   backdrop-filter: brightness(0.6);
+  pointer-events: none;
 }
 .load-more-button {
   margin-bottom: 20vh;

@@ -46,7 +46,9 @@ export const App = () => {
 
   console.log({ user });
   return (
-    <globalContext.Provider value={{ user, setUser, openModal, setOpenModal }}>
+    <globalContext.Provider
+      value={{ user, setUser, openModal, setOpenModal, sidebar }}
+    >
       <BrowserRouter>
         <div className="app">
           <NavTop sidebar={sidebar} handleSidebar={handleSidebar} />

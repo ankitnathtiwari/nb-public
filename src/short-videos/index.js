@@ -20,7 +20,8 @@ const ShortVideos = (props) => {
   const id = searchParams.get("id");
   const [page, setPage] = useState(1);
   const [followingUser, setFollowingUser] = useState({});
-  const { user, setUser, openModal, setOpenModal } = useContext(globalContext);
+  const { user, setUser, openModal, setOpenModal, sidebar } =
+    useContext(globalContext);
 
   const [videoList, loading, err] = useFetch(
     topic ? topic : "allpost",
@@ -44,7 +45,11 @@ const ShortVideos = (props) => {
 
   return (
     <>
-      <div className={!openModal ? "short-videos" : "short-videos-filter"}>
+      <div
+        className={
+          openModal || sidebar ? "short-videos-filter" : "short-videos"
+        }
+      >
         {videoList.map((item) => {
           return (
             <div key={item._id}>

@@ -61,9 +61,11 @@ export const NavTopSide = ({ displaySidebar, handleSidebar }) => {
         <Link to="?top=scienceandtech">Science and Technology</Link>
       </div>
 
-      <div className="nav-top-side-close">
-        <button onClick={handleLogout}>Logout</button>
-      </div>
+      {user.auth ? (
+        <div className="nav-top-side-close">
+          <button onClick={handleLogout}>Logout</button>
+        </div>
+      ) : null}
       <div className="nav-top-side-close">
         <button onClick={() => handleSidebar(false)}>Close</button>
       </div>
