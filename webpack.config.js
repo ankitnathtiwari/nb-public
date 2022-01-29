@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const { envConfig } = require("./env_config/index");
 
 module.exports = {
   //entrypoint
@@ -9,9 +10,8 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/",
   },
-  // mode: "development",
-  mode: "production",
-  //loaders
+  mode: envConfig === "staging" ? "production" : envConfig,
+
   module: {
     //rules an arry of objects
     rules: [

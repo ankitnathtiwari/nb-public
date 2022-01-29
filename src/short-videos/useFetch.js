@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { baseUrl } from "../base-url";
+import { appConfig } from "../app-config";
 import regeneratorRuntime from "regenerator-runtime";
 
 const fetchData = async (top, page, videoPostId) => {
-  const url = `${baseUrl}/public/video?top=${top}&&page=${page}&&id=${videoPostId}`;
+  const url = `${appConfig.url.api}/public/video?top=${top}&&page=${page}&&id=${videoPostId}`;
   try {
     const res = await axios.get(url, { withCredentials: true });
     return { status: true, data: res.data.videoPosts };

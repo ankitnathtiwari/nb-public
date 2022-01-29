@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./index.css";
 import moment from "moment";
-import { imageUrl, mainUrl } from "../base-url/index";
+import { appConfig } from "../app-config/index";
 import { Link } from "react-router-dom";
 import { SocialShare } from "../social-share";
 import { SocialShareButton } from "../social-share-button";
@@ -10,7 +10,7 @@ export const Post = ({ post }) => {
   return (
     <div className="post">
       <img
-        src={`${imageUrl}/${
+        src={`${appConfig.url.image}/${
           post.image[0] === "/" ? post.image.substr(1) : post.image
         }`}
         alt="News Image"
@@ -27,7 +27,10 @@ export const Post = ({ post }) => {
           {post.authorName ? <p>{`by ${post.authorName}`}</p> : null}
         </div>
         <div className="post-social-share-button">
-          <SocialShareButton post={post} shareUrl={`${mainUrl}/posts`} />
+          <SocialShareButton
+            post={post}
+            shareUrl={`${appConfig.url.share}/posts`}
+          />
         </div>
       </div>
     </div>

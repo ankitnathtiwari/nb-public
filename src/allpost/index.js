@@ -8,7 +8,7 @@ import { Post } from "../post/index";
 import { Button } from "../shared/button";
 import { useLocation } from "react-router-dom";
 import { Loading } from "../shared/loading";
-import { topics } from "../base-url/index";
+import { topics } from "../app-config/index";
 
 export const AllPost = () => {
   const { search } = useLocation();

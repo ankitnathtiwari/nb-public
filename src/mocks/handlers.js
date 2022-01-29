@@ -2,14 +2,13 @@ import { rest } from "msw";
 import { posts1, posts2, posts3 } from "./posts";
 import fakeimage from "./images/fakeimage.jpg";
 import regeneratorRuntime from "regenerator-runtime";
-import { baseUrl } from "../base-url";
-import { imageUrl } from "../base-url";
+import { appConfig } from "../app-config";
 import { videoPosts1, videoPosts2, videoPosts3 } from "./videoPosts";
 //   req.url.searchParams.get("page"),
 //   req.url.searchParams.get("top")
 
 export const handlers = [
-  rest.get(baseUrl, (req, res, ctx) => {
+  rest.get(appConfig.url.api, (req, res, ctx) => {
     if (req.url.searchParams.get("top") === "singlepost") {
       let post = posts1.filter(
         (item) => item._id === Number(req.url.searchParams.get("id"))
@@ -30,7 +29,7 @@ export const handlers = [
   }),
 
   rest.get(
-    `${baseUrl}/video/allvideo?top=allpost&&page=1&&id=null`,
+    `${appConfig.url.api}/video/allvideo?top=allpost&&page=1&&id=null`,
     (req, res, ctx) => {
       if (req.url.searchParams.get("top") === "singlepost") {
         let post = posts1.filter(
@@ -52,7 +51,7 @@ export const handlers = [
     }
   ),
 
-  rest.get(`${imageUrl}/fakeimage.jpg`, async (_, res, ctx) => {
+  rest.get(`${appConfig.url.image}/fakeimage.jpg`, async (_, res, ctx) => {
     // Convert "base64" image to "ArrayBuffer".
     const imageBuffer = await fetch(fakeimage).then((res) => res.arrayBuffer());
 

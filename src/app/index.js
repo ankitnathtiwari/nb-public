@@ -15,7 +15,7 @@ import { AllPost } from "../allpost";
 import { BottomNav } from "../bottom-nav";
 import ReactGA from "react-ga";
 import axios from "axios";
-import { baseUrl } from "../base-url";
+import { appConfig } from "../app-config";
 export const globalContext = React.createContext();
 
 export const App = () => {
@@ -30,7 +30,7 @@ export const App = () => {
     const initAuthVerification = async () => {
       const data = await axios({
         method: "get",
-        url: `${baseUrl}/auth/publicAuth`,
+        url: `${appConfig.url.api}/auth/publicAuth`,
         withCredentials: true,
       });
 

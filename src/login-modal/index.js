@@ -3,7 +3,7 @@ import { Button } from "../shared/button";
 import "./index.css";
 import { GoogleLogin } from "react-google-login";
 import axios from "axios";
-import { baseUrl } from "../base-url";
+import { appConfig } from "../app-config";
 import { globalContext } from "../app";
 import { Loading } from "../shared/loading";
 
@@ -14,7 +14,7 @@ export const LoginModal = ({ setOpenModal }) => {
   const responseGoogle = async (response) => {
     setLoading(true);
     const authData = await axios.get(
-      `${baseUrl}/auth/googleLogin?token=${response.tokenId}`,
+      `${appConfig.url.api}/auth/googleLogin?token=${response.tokenId}`,
       {
         withCredentials: true,
       }
@@ -38,7 +38,7 @@ export const LoginModal = ({ setOpenModal }) => {
   return (
     <div className="google-login">
       <GoogleLogin
-        clientId="707182129646-je9tjuk017sjhejbum688i8lbcshje8o.apps.googleusercontent.com"
+        clientId={appConfig.oAuth.googleId}
         buttonText="Login With Google"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}

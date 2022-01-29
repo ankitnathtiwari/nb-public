@@ -4,7 +4,7 @@ import "./index.css";
 import { globalContext } from "../app";
 import { Button } from "../shared/button";
 import axios from "axios";
-import { baseUrl } from "../base-url";
+import { appConfig } from "../app-config";
 export const NavTopSide = ({ displaySidebar, handleSidebar }) => {
   const { user, setUser, openModal, setOpenModal } = useContext(globalContext);
 
@@ -17,7 +17,7 @@ export const NavTopSide = ({ displaySidebar, handleSidebar }) => {
   };
 
   const handleLogout = async () => {
-    const logoutData = await axios.get(`${baseUrl}/auth/logout`, {
+    const logoutData = await axios.get(`${appConfig.url.api}/auth/logout`, {
       withCredentials: true,
     });
     if (logoutData.data.status) {

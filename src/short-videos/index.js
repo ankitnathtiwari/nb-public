@@ -1,18 +1,14 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import ReactPlayer from "react-player";
 import { useRouteMatch, useLocation } from "react-router-dom";
-import { baseUrl, videoUrl } from "../base-url";
 import { LoginModal } from "../login-modal";
 import { ReactVideo } from "../react-video";
 import { Button } from "../shared/button";
 import { Loading } from "../shared/loading";
 import { PopUpModal } from "../shared/pop-up-modal";
-import { SocialShareButton } from "../social-share-button";
 import "./index.css";
 import { useFetch } from "./useFetch";
 const width = "90vw";
 import { globalContext } from "../app";
-import axios from "axios";
 
 const ShortVideos = (props) => {
   let searchParams = new URLSearchParams(useLocation().search);

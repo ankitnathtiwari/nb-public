@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import ReactPlayer from "react-player";
-import { videoUrl, mainUrl, thumbnailUrl } from "../base-url";
+import { appConfig } from "../app-config";
 import { SocialShareButton } from "../social-share-button";
 import moment from "moment";
 import "./index.css";
@@ -8,7 +8,6 @@ import { Button } from "../shared/button";
 import axios from "axios";
 const width = "100vw";
 import { globalContext } from "../app";
-import { baseUrl } from "../base-url";
 import { FollowButton } from "../shared/button/followButton";
 
 export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
@@ -60,7 +59,7 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
     if (!item.followStatus) {
       const followResponse = await axios({
         method: "post",
-        url: `${baseUrl}/public/follow?followed=${item.user}`,
+        url: `${appConfig.url.api}/public/follow?followed=${item.user}`,
         withCredentials: true,
       });
       if (followResponse.data.status) {
@@ -69,7 +68,7 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
     } else {
       const followResponse = await axios({
         method: "post",
-        url: `${baseUrl}/public/unfollow?followed=${item.user}`,
+        url: `${appConfig.url.api}/public/unfollow?followed=${item.user}`,
         withCredentials: true,
       });
       if (followResponse.data.status) {
@@ -158,7 +157,10 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
           </FollowButton>
         </div>
 
-        <SocialShareButton post={item} shareUrl={`${mainUrl}/videos`} />
+        <SocialShareButton
+          post={item}
+          shareUrl={`${appConfig.url.share}/videos`}
+        />
       </div>
     </div>
   );

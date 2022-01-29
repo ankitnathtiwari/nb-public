@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import axios from "axios";
-import { baseUrl } from "../base-url";
+import { appConfig } from "../app-config";
 
 const getDataOnPageChange = (url, topic, dispatch) => {
   axios
@@ -20,7 +20,7 @@ export const useFetch = (state, dispatch, query) => {
   let searchParams = new URLSearchParams(query);
   const topic = searchParams.get("top");
 
-  const url = `${baseUrl}/public/post${query}&page=${state.page}`;
+  const url = `${appConfig.url.api}/public/post${query}&page=${state.page}`;
 
   useEffect(() => {
     if (topic !== state.topic) {
