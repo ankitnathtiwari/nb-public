@@ -12,18 +12,21 @@ export const LoginModal = ({ setOpenModal }) => {
   const [loading, setLoading] = useState(false);
 
   const responseGoogle = async (response) => {
-    setLoading(true);
-    const authData = await axios.get(
-      `${appConfig.url.api}/auth/googleLogin?token=${response.tokenId}`,
-      {
-        withCredentials: true,
-      }
-    );
+    console.log({ response }, appConfig.oAuth, "google response");
+    if (!response.error) {
+      setLoading(true);
+      const authData = await axios.get(
+        `${appConfig.url.api}/auth/googleLogin?token=${response.tokenId}`,
+        {
+          withCredentials: true,
+        }
+      );
 
-    if (authData.data.status) {
-      setUser(authData.data.user);
-      setOpenModal(false);
-      setLoading(false);
+      if (authData.data.status) {
+        setUser(authData.data.user);
+        setOpenModal(false);
+        setLoading(false);
+      }
     }
   };
 

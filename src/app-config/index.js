@@ -12,7 +12,7 @@ const config = {
     },
     oAuth: {
       googleId:
-        "707182129646-je9tjuk017sjhejbum688i8lbcshje8o.apps.googleusercontent.com",
+        "707182129646-gna1evuic74nuq10bdiuv83j4j0fco3t.apps.googleusercontent.com",
       facebookId: "",
     },
   },
