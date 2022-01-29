@@ -15,6 +15,9 @@ const config = {
         "707182129646-gna1evuic74nuq10bdiuv83j4j0fco3t.apps.googleusercontent.com",
       facebookId: "",
     },
+    analytics: {
+      google: "UA-215888484-1",
+    },
   },
   development: {
     url: {
@@ -28,6 +31,9 @@ const config = {
       googleId:
         "707182129646-gna1evuic74nuq10bdiuv83j4j0fco3t.apps.googleusercontent.com",
       facebookId: "",
+    },
+    analytics: {
+      google: "UA-215888484-1",
     },
   },
   staging: {
@@ -43,6 +49,9 @@ const config = {
         "707182129646-je9tjuk017sjhejbum688i8lbcshje8o.apps.googleusercontent.com",
       facebookId: "",
     },
+    analytics: {
+      google: "UA-215888484-1",
+    },
   },
   production: {
     url: {
@@ -56,6 +65,9 @@ const config = {
       googleId:
         "707182129646-je9tjuk017sjhejbum688i8lbcshje8o.apps.googleusercontent.com",
       facebookId: "",
+    },
+    analytics: {
+      google: "UA-215888484-1",
     },
   },
 };

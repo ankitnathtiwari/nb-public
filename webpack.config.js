@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-const { envConfig } = require("./env_config/index");
-
+const { envConfig, env_state } = require("./env_config/index");
+console.log(env_state);
 module.exports = {
   //entrypoint
   //outputpoint
@@ -10,7 +10,7 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/",
   },
-  mode: envConfig === "staging" ? "production" : envConfig,
+  mode: envConfig === "staging" ? env_state.PRODUCTION : envConfig,
 
   module: {
     //rules an arry of objects
@@ -52,6 +52,7 @@ module.exports = {
 
   //devServer historyApiFallback for react router
   // devtool: "source-map",
+  devtool: envConfig === env_state.DEVELOPEMENT ? "source-map" : false,
   devServer: {
     historyApiFallback: true,
     contentBase: "./",

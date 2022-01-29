@@ -6,4 +6,5 @@ const env_state = {
 
 module.exports = {
   envConfig: env_state.STAGING,
+  env_state,
 };

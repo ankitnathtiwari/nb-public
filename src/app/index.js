@@ -40,7 +40,7 @@ export const App = () => {
     };
 
     initAuthVerification();
-    ReactGA.initialize("UA-215888484-1");
+    ReactGA.initialize(appConfig.analytics.google);
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
