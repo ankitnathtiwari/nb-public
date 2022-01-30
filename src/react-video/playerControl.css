@@ -10,7 +10,7 @@
   width: 30vw;
   height: 10vw;
   margin-top: 25vw;
-  margin-left: 20vw;
+  margin-left: 46vw;
 }
 .player-control-end {
   width: 100vw;
@@ -27,10 +27,39 @@
   display: flex;
   align-items: center;
 }
+
+.react-player-seek-slider {
+  -webkit-appearance: none;
+  width: 45vw;
+  height: 4px;
+  background: #ff0000;
+}
+
+.react-player-seek-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background: #fefefe;
+  cursor: pointer;
+}
+
+.react-player-seek-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background: #fefefe;
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1050px) {
   .player-control {
     width: 60vw !important;
     height: 45vw !important;
+  }
+  .react-player-seek-slider {
+    width: 60vw;
   }
 }
 
@@ -39,11 +68,17 @@
     width: 90vw !important;
     height: 60vw !important;
   }
+  .react-player-seek-slider {
+    width: 90vw;
+  }
 }
 @media only screen and (max-width: 700px) {
   .player-control {
     width: 90vw !important;
     height: 60vw !important;
+  }
+  .react-player-seek-slider {
+    width: 90vw;
   }
 }
 @media only screen and (max-width: 520px) {
@@ -57,6 +92,9 @@
   .player-control {
     width: 100vw !important;
     height: 67vw !important;
+  }
+  .react-player-seek-slider {
+    width: 100vw;
   }
 }
 @media only screen and (max-width: 375px) {

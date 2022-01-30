@@ -57,31 +57,6 @@
   bottom: 8vw;
 }
 
-.react-player-seek-slider {
-  -webkit-appearance: none;
-  width: 45vw;
-  height: 4px;
-  background: #ff0000;
-}
-
-.react-player-seek-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  border-radius: 5px;
-  background: #000000;
-  cursor: pointer;
-}
-
-.react-player-seek-slider::-moz-range-thumb {
-  width: 18px;
-  height: 18px;
-  border-radius: 5px;
-  background: #000000;
-  cursor: pointer;
-}
-
 @media only screen and (max-width: 1050px) {
   .short-video-with-desc {
     width: 60vw;
@@ -98,9 +73,6 @@
   .react-player-seek {
     position: absolute;
     bottom: 12vw;
-  }
-  .react-player-seek-slider {
-    width: 60vw;
   }
 }
 
@@ -123,9 +95,6 @@
     position: absolute;
     bottom: 15vw;
   }
-  .react-player-seek-slider {
-    width: 90vw;
-  }
 }
 @media only screen and (max-width: 700px) {
   .short-video-with-desc {
@@ -145,9 +114,6 @@
   .react-player-seek {
     position: absolute;
     top: 72%;
-  }
-  .react-player-seek-slider {
-    width: 90vw;
   }
 }
 @media only screen and (max-width: 520px) {
@@ -179,9 +145,6 @@
   .react-player-seek {
     position: absolute;
     top: 62%;
-  }
-  .react-player-seek-slider {
-    width: 100vw;
   }
 }
 @media only screen and (max-width: 375px) {

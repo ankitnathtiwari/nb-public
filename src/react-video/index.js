@@ -15,12 +15,13 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
   const { user, setUser, openModal, setOpenModal } = useContext(globalContext);
   const [volume, setVolume] = useState(0.6);
   const [seekValue, setSeekValue] = useState(0);
-  const [playValue, setPlayValue] = useState(true);
+  const [playValue, setPlayValue] = useState(false);
   const [playTime, setPlayTime] = useState(0);
   const [playDuration, setPlayDuration] = useState(0);
   const player = useRef();
   const videoItemRef = useRef();
   const [showControl, setShowControl] = useState(false);
+  const [thumbnailPreview, setThumbnailPreview] = useState(true);
   const handleSeek = (e) => {
     setSeekValue(e.target.value);
     player.current.seekTo(Number(e.target.value) / 100);
@@ -83,7 +84,9 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
     <div className="short-video-with-desc" key={item._id} ref={videoItemRef}>
       <div
         onClick={() => {
-          setShowControl(!showControl);
+          if (playValue) {
+            setShowControl(!showControl);
+          }
         }}
       >
         <ReactPlayer
@@ -101,17 +104,23 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
           }}
           onDuration={(e) => {
             setPlayDuration(e);
-            console.log(e, "duration react player");
           }}
           onClickPreview={(e) => {
-            console.log({ e }, "clikc on priview");
+            setThumbnailPreview(false);
+            setPlayValue(true);
           }}
         />
+
         <PlayerControl
           showControl={showControl}
           setShowControl={setShowControl}
           playValue={playValue}
           setPlayValue={setPlayValue}
+          seekValue={seekValue}
+          handleSeek={handleSeek}
+          playTime={playTime}
+          playDuration={playDuration}
+          thumbnailPreview={thumbnailPreview}
         />
 
         {/* <div className="react-player-play-button">

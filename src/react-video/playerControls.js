@@ -8,14 +8,24 @@ export const PlayerControl = ({
   setShowControl,
   playValue,
   setPlayValue,
+  seekValue,
+  handleSeek,
+  playTime,
+  playDuration,
+  thumbnailPreview,
 }) => {
-  if (showControl && !playValue) {
+  if (thumbnailPreview) {
     return null;
+  }
+  if (!showControl) {
+    if (playValue) {
+      return null;
+    }
   }
   return (
     <div className="player-control">
       <div className="player-control-middle">
-        <div>
+        {/* <div name="backward">
           <svg
             version="1.0"
             xmlns="http://www.w3.org/2000/svg"
@@ -43,47 +53,50 @@ export const PlayerControl = ({
               />
             </g>
           </svg>
-        </div>
-        <div onClick={() => setPlayValue(true)}>
-          <svg
-            version="1.0"
-            xmlns="http://www.w3.org/2000/svg"
-            width="30.000000pt"
-            height="30.000000pt"
-            viewBox="0 0 64.000000 64.000000"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <g
-              transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
-              fill="#fefefe"
-              stroke="none"
+        </div> */}
+        {playValue ? null : (
+          <div name="play" onClick={() => setPlayValue(true)}>
+            <svg
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="35.000000pt"
+              height="35.000000pt"
+              viewBox="0 0 64.000000 64.000000"
+              preserveAspectRatio="xMidYMid meet"
             >
-              <path
-                d="M126 558 c-23 -33 -23 -443 0 -476 8 -12 21 -22 27 -22 7 1 91 51
+              <g
+                transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                fill="#fefefe"
+                stroke="none"
+              >
+                <path
+                  d="M126 558 c-23 -33 -23 -443 0 -476 8 -12 21 -22 27 -22 7 1 91 51
            187 113 171 110 175 114 175 147 0 33 -4 37 -175 147 -96 62 -180 112 -187
            113 -6 0 -19 -10 -27 -22z m195 -110 c176 -112 187 -121 170 -141 -15 -19
            -326 -217 -340 -217 -8 0 -11 65 -11 230 0 165 3 230 11 230 7 0 83 -46 170
            -102z"
-              />
-            </g>
-          </svg>
-        </div>
-        <div onClick={() => setPlayValue(false)}>
-          <svg
-            version="1.0"
-            xmlns="http://www.w3.org/2000/svg"
-            width="30.000000pt"
-            height="30.000000pt"
-            viewBox="0 0 512.000000 512.000000"
-            preserveAspectRatio="xMidYMid meet"
-          >
-            <g
-              transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-              fill="#fefefe"
-              stroke="none"
+                />
+              </g>
+            </svg>
+          </div>
+        )}
+        {playValue ? (
+          <div name="pause" onClick={() => setPlayValue(false)}>
+            <svg
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="35.000000pt"
+              height="35.000000pt"
+              viewBox="0 0 512.000000 512.000000"
+              preserveAspectRatio="xMidYMid meet"
             >
-              <path
-                d="M1204 4581 c-215 -34 -384 -188 -439 -397 -13 -51 -15 -261 -15
+              <g
+                transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                fill="#fefefe"
+                stroke="none"
+              >
+                <path
+                  d="M1204 4581 c-215 -34 -384 -188 -439 -397 -13 -51 -15 -261 -15
 -1624 0 -1363 2 -1573 15 -1624 47 -180 183 -323 360 -379 66 -21 88 -22 375
 -22 304 0 305 0 376 26 167 61 283 180 340 349 18 53 19 118 19 1650 0 1532
 -1 1597 -19 1650 -57 170 -174 289 -340 348 -69 25 -80 26 -346 28 -151 1
@@ -91,9 +104,9 @@ export const PlayerControl = ({
 -27 -57 c-35 -76 -104 -141 -175 -168 -54 -20 -72 -21 -347 -18 -281 3 -292 4
 -334 26 -66 35 -119 88 -149 150 l-28 57 -3 1555 c-3 1717 -6 1613 61 1702 36
 48 112 103 161 117 17 5 156 10 308 10 257 1 281 -1 332 -20z"
-              />
-              <path
-                d="M3328 4580 c-191 -30 -355 -169 -420 -359 l-23 -66 0 -1595 0 -1595
+                />
+                <path
+                  d="M3328 4580 c-191 -30 -355 -169 -420 -359 l-23 -66 0 -1595 0 -1595
 23 -68 c46 -133 144 -246 266 -305 113 -55 127 -57 451 -57 282 0 304 1 370
 22 176 55 313 200 360 380 23 86 23 3160 0 3246 -46 177 -182 323 -354 379
 -60 19 -91 21 -341 24 -151 1 -301 -1 -332 -6z m650 -238 c66 -35 119 -88 149
@@ -101,11 +114,12 @@ export const PlayerControl = ({
 -49 -23 -348 -23 -303 0 -305 0 -354 24 -66 33 -122 91 -155 160 l-26 56 0
 1566 0 1566 35 69 c25 50 49 79 85 106 87 66 96 67 425 65 286 -2 296 -3 338
 -25z"
-              />
-            </g>
-          </svg>
-        </div>
-        <div>
+                />
+              </g>
+            </svg>
+          </div>
+        ) : null}
+        {/* <div name="forward">
           <svg
             version="1.0"
             xmlns="http://www.w3.org/2000/svg"
@@ -135,20 +149,27 @@ m2045 253 c1222 -844 1387 -960 1387 -976 -1 -9 -33 -38 -73 -65 -40 -28 -490
               />
             </g>
           </svg>
-        </div>
+        </div> */}
       </div>
       <div className="player-control-end">
         <div>
-          <input type="range" min="1" max="100" />
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value={seekValue}
+            onChange={handleSeek}
+            className="react-player-seek-slider"
+          />
         </div>
         <div className="player-control-end-timer">
           <div>
-            {moment().startOf("day").seconds(10).format("mm:ss")} /
-            {moment().startOf("day").seconds(10).format("mm:ss")}
+            {moment().startOf("day").seconds(playTime).format("mm:ss")} /
+            {moment().startOf("day").seconds(playDuration).format("mm:ss")}
           </div>
           <div className="player-control-end-timer-full-screen">
-            <div>Speed</div>
-            <div>
+            {/* <div>Speed</div> */}
+            {/* <div>
               <svg
                 version="1.0"
                 xmlns="http://www.w3.org/2000/svg"
@@ -191,7 +212,7 @@ m2045 253 c1222 -844 1387 -960 1387 -976 -1 -9 -33 -38 -73 -65 -40 -28 -490
                   />
                 </g>
               </svg>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
