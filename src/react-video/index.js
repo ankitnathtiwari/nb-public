@@ -9,17 +9,18 @@ import axios from "axios";
 const width = "100vw";
 import { globalContext } from "../app";
 import { FollowButton } from "../shared/button/followButton";
+import { PlayerControl } from "./playerControls";
 
 export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
   const { user, setUser, openModal, setOpenModal } = useContext(globalContext);
   const [volume, setVolume] = useState(0.6);
   const [seekValue, setSeekValue] = useState(0);
-  const [playValue, setPlayValue] = useState(false);
+  const [playValue, setPlayValue] = useState(true);
   const [playTime, setPlayTime] = useState(0);
   const [playDuration, setPlayDuration] = useState(0);
   const player = useRef();
   const videoItemRef = useRef();
-
+  const [showControl, setShowControl] = useState(false);
   const handleSeek = (e) => {
     setSeekValue(e.target.value);
     player.current.seekTo(Number(e.target.value) / 100);
@@ -80,7 +81,11 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
 
   return (
     <div className="short-video-with-desc" key={item._id} ref={videoItemRef}>
-      <div onClick={() => setPlayValue(!playValue)}>
+      <div
+        onClick={() => {
+          setShowControl(!showControl);
+        }}
+      >
         <ReactPlayer
           ref={player}
           url={`${item.url.video}/${item.video}`}
@@ -102,8 +107,14 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
             console.log({ e }, "clikc on priview");
           }}
         />
+        <PlayerControl
+          showControl={showControl}
+          setShowControl={setShowControl}
+          playValue={playValue}
+          setPlayValue={setPlayValue}
+        />
 
-        <div className="react-player-play-button">
+        {/* <div className="react-player-play-button">
           {!playValue && seekValue > 0 ? (
             <svg
               version="1.0"
@@ -140,9 +151,9 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
               className="react-player-seek-slider"
             />
           ) : null}
-          {/* <p>{moment().startOf("day").seconds(playTime).format("mm:ss")}</p>
-          <p>{moment().startOf("day").seconds(playDuration).format("mm:ss")}</p> */}
-        </div>
+          <p>{moment().startOf("day").seconds(playTime).format("mm:ss")}</p>
+          <p>{moment().startOf("day").seconds(playDuration).format("mm:ss")}</p>
+        </div> */}
       </div>
       <h4 className="short-video-with-desc-video-title">{item.title}</h4>
       <div className="video-post-social-share-button">

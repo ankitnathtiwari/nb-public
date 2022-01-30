@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const { envConfig, env_state } = require("./env_config/index");
-console.log(env_state);
+
 module.exports = {
   //entrypoint
   //outputpoint

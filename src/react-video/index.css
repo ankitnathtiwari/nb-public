@@ -90,7 +90,7 @@
     width: 60vw !important;
   }
   .react-player .react-player__preview {
-    height: 40vw !important;
+    height: 45vw !important;
   }
   .react-player video {
     width: 60vw !important;
@@ -110,6 +110,7 @@
   }
   .react-player {
     width: 90vw !important;
+    height: 60vw !important;
   }
   .react-player .react-player__preview {
     height: 60vw !important;
@@ -132,6 +133,7 @@
   }
   .react-player {
     width: 90vw !important;
+    height: 60vw !important;
   }
   .react-player .react-player__preview {
     height: 60vw !important;
@@ -165,6 +167,7 @@
   }
   .react-player {
     width: 100vw !important;
+    height: 67vw !important;
   }
   .react-player .react-player__preview {
     height: 67vw !important;
