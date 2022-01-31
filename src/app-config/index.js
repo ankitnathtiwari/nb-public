@@ -63,7 +63,7 @@ const config = {
     },
     oAuth: {
       googleId:
-        "707182129646-je9tjuk017sjhejbum688i8lbcshje8o.apps.googleusercontent.com",
+        "707182129646-tu4fhvnruqllu1rii8suc2mqf3sobhr4.apps.googleusercontent.com",
       facebookId: "",
     },
     analytics: {
