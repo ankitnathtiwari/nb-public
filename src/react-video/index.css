@@ -42,9 +42,10 @@
 .video-post-social-share-button-time {
   color: rgb(121, 121, 121);
   font-size: 12px;
+  max-width: 40vw;
 }
 .video-post-follow-button {
-  margin-left: 10vw;
+  margin-left: 5vw;
 }
 .react-player-play-button {
   position: absolute;

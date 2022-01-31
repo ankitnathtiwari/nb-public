@@ -167,7 +167,7 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
       <h4 className="short-video-with-desc-video-title">{item.title}</h4>
       <div className="video-post-social-share-button">
         <div className="video-post-social-share-button-time">
-          {moment(item.pub_date).startOf("hours").fromNow()}
+          <div>{moment(item.pub_date).startOf("hours").fromNow()}</div>
           <p>
             {`by ${item.authorName}`}{" "}
             {item.followers_count
