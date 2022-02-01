@@ -75,6 +75,13 @@
   .react-player-seek-slider {
     width: 90vw;
   }
+  .player-control-middle {
+    margin-top: 28vw;
+    margin-left: 41vw;
+  }
+  .player-control-end {
+    margin-top: 15vw;
+  }
 }
 @media only screen and (max-width: 700px) {
   .player-control {
@@ -99,6 +106,13 @@
   }
   .react-player-seek-slider {
     width: 100vw;
+  }
+  .player-control-middle {
+    margin-top: 28vw;
+    margin-left: 43vw;
+  }
+  .player-control-end {
+    margin-top: 20vw;
   }
 }
 @media only screen and (max-width: 375px) {
