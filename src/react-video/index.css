@@ -35,7 +35,7 @@
 .video-post-social-share-button {
   margin: 12px;
   display: flex;
-  height: 20vw;
+  height: 12vh;
   justify-content: space-between;
   align-items: center;
 }

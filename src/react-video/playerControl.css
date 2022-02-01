@@ -1,6 +1,6 @@
 .player-control {
   width: 45vw !important;
-  height: auto !important;
+  height: 32vw !important;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -9,13 +9,13 @@
   display: flex;
   width: 30vw;
   height: 10vw;
-  margin-top: 25vw;
-  margin-left: 46vw;
+  margin-top: 14vw;
+  margin-left: 22vw;
 }
 .player-control-end {
   width: 100vw;
   height: 10vw;
-  margin-top: 18vw;
+  margin-top: 5vw;
 }
 .player-control-end-timer {
   color: #fefefe;
@@ -60,6 +60,10 @@
   }
   .react-player-seek-slider {
     width: 60vw;
+  }
+  .player-control-middle {
+    margin-top: 14vw;
+    margin-left: 28vw;
   }
 }
 
