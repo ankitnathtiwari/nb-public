@@ -22,9 +22,9 @@ const config = {
   development: {
     url: {
       api: "http://localhost:8000/json_api",
-      video: "https://dufo0lcu4giz5.cloudfront.net",
-      image: "https://dufo0lcu4giz5.cloudfront.net",
-      thumbnail: "https://dufo0lcu4giz5.cloudfront.net",
+      video: "https://d4nl0nj5cg2xr.cloudfront.net",
+      image: "https://d4nl0nj5cg2xr.cloudfront.net",
+      thumbnail: "https://d4nl0nj5cg2xr.cloudfront.net",
       share: "http://localhost:8080",
     },
     oAuth: {
@@ -39,9 +39,9 @@ const config = {
   staging: {
     url: {
       api: "http://localhost:8000/json_api",
-      video: "https://dufo0lcu4giz5.cloudfront.net",
-      image: "https://dufo0lcu4giz5.cloudfront.net",
-      thumbnail: "https://dufo0lcu4giz5.cloudfront.net",
+      video: "https://d4nl0nj5cg2xr.cloudfront.net",
+      image: "https://d4nl0nj5cg2xr.cloudfront.net",
+      thumbnail: "https://d4nl0nj5cg2xr.cloudfront.net",
       share: "http://localhost:8080",
     },
     oAuth: {
