@@ -1,6 +1,7 @@
 .short-videos {
   margin: auto;
-  margin-top: 12vh;
+  margin-top: 18vh;
+  min-height: 20vh;
 }
 .short-videos-filter {
   margin: auto;
@@ -11,4 +12,14 @@
 }
 .load-more-button {
   margin-bottom: 20vh;
+}
+@media only screen and (max-width: 1100px) {
+  .short-videos {
+    margin-top: 15vh;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .short-videos {
+    margin-top: 12vh;
+  }
 }
