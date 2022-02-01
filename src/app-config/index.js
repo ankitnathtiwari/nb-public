@@ -56,9 +56,9 @@ const config = {
   production: {
     url: {
       api: "https://newsbird.live/json_api",
-      video: "https://dufo0lcu4giz5.cloudfront.net",
-      image: "https://dufo0lcu4giz5.cloudfront.net",
-      thumbnail: "https://dufo0lcu4giz5.cloudfront.net",
+      video: "https://d29l0yhxfc2fhu.cloudfront.net",
+      image: "https://d1wqmjbf41l8jz.cloudfront.net",
+      thumbnail: "https://d288q74725xe8u.cloudfront.net",
       share: "https://newsbird.live",
     },
     oAuth: {
