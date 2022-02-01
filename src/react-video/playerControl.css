@@ -23,6 +23,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.player-control-end-timer-value {
+  font-size: 12px;
+}
 .player-control-end-timer-full-screen {
   display: flex;
   align-items: center;

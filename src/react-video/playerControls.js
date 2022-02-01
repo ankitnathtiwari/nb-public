@@ -163,7 +163,7 @@ m2045 253 c1222 -844 1387 -960 1387 -976 -1 -9 -33 -38 -73 -65 -40 -28 -490
           />
         </div>
         <div className="player-control-end-timer">
-          <div>
+          <div className="player-control-end-timer-value">
             {moment().startOf("day").seconds(playTime).format("mm:ss")} /
             {moment().startOf("day").seconds(playDuration).format("mm:ss")}
           </div>
