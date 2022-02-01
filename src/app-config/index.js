@@ -22,9 +22,9 @@ const config = {
   development: {
     url: {
       api: "http://localhost:8000/json_api",
-      video: "https://nb-test-video-mum.s3.ap-south-1.amazonaws.com",
-      image: "https://nb-test-video-mum.s3.ap-south-1.amazonaws.com",
-      thumbnail: "https://nb-test-video-mum.s3.ap-south-1.amazonaws.com",
+      video: "https://dufo0lcu4giz5.cloudfront.net",
+      image: "https://dufo0lcu4giz5.cloudfront.net",
+      thumbnail: "https://dufo0lcu4giz5.cloudfront.net",
       share: "http://localhost:8080",
     },
     oAuth: {
@@ -38,11 +38,11 @@ const config = {
   },
   staging: {
     url: {
-      api: "http://staging.newsbird.live/json_api",
-      video: "https://nb-test-video-mum.s3.ap-south-1.amazonaws.com",
-      image: "https://nb-test-video-mum.s3.ap-south-1.amazonaws.com",
-      thumbnail: "https://nb-test-video-mum.s3.ap-south-1.amazonaws.com",
-      share: "http://staging.newsbird.live",
+      api: "http://localhost:8000/json_api",
+      video: "https://dufo0lcu4giz5.cloudfront.net",
+      image: "https://dufo0lcu4giz5.cloudfront.net",
+      thumbnail: "https://dufo0lcu4giz5.cloudfront.net",
+      share: "http://localhost:8080",
     },
     oAuth: {
       googleId:
@@ -56,9 +56,9 @@ const config = {
   production: {
     url: {
       api: "https://newsbird.live/json_api",
-      video: "https://nb-video-post-mum.s3.ap-south-1.amazonaws.com",
-      image: "https://nb-post-image-mum.s3.ap-south-1.amazonaws.com",
-      thumbnail: "https://nb-video-thumbnail-mum.s3.ap-south-1.amazonaws.com",
+      video: "https://dufo0lcu4giz5.cloudfront.net",
+      image: "https://dufo0lcu4giz5.cloudfront.net",
+      thumbnail: "https://dufo0lcu4giz5.cloudfront.net",
       share: "https://newsbird.live",
     },
     oAuth: {

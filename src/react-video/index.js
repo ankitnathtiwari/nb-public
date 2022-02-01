@@ -91,12 +91,12 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
       >
         <ReactPlayer
           ref={player}
-          url={`${item.url.video}/${item.video}`}
+          url={`${appConfig.url.video}/${item.video}`}
           width={width}
           controls={false}
           playing={playValue}
           volume={volume}
-          light={`${item.url.thumbnail}/${item.thumbNail}`}
+          light={`${appConfig.url.thumbnail}/${item.thumbNail}`}
           className="react-player"
           onProgress={(e) => {
             setSeekValue(Number(e.played) * 100);
