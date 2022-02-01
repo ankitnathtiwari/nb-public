@@ -25,6 +25,7 @@
 }
 .player-control-end-timer-value {
   font-size: 12px;
+  color: #e7e7e7;
 }
 .player-control-end-timer-full-screen {
   display: flex;
