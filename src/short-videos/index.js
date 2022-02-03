@@ -9,7 +9,8 @@ import "./index.css";
 import { useFetch } from "./useFetch";
 const width = "90vw";
 import { globalContext } from "../app";
-
+import { Helmet } from "react-helmet";
+import { appConfig } from "../app-config";
 const ShortVideos = (props) => {
   let searchParams = new URLSearchParams(useLocation().search);
   const topic = searchParams.get("top");
@@ -49,6 +50,29 @@ const ShortVideos = (props) => {
         {videoList.map((item) => {
           return (
             <div key={item._id}>
+              {videoList.length === 1 ? (
+                <Helmet>
+                  <title>{post.title}</title>
+                  <meta
+                    property="og:url"
+                    content={`${appConfig.url.share}/?top=singlepost&id=${item._id}`}
+                  />
+                  <meta property="og:type" content="image" />
+                  <meta
+                    property="og:title"
+                    content="When Great Minds Don’t Think Alike"
+                  />
+                  <meta
+                    property="og:description"
+                    content="How much does culture influence creative thinking?"
+                  />
+                  <meta
+                    property="og:image"
+                    content={`${appConfig.url.thumbnail}/${item.thumbNail}`}
+                  />
+                </Helmet>
+              ) : null}
+
               <ReactVideo
                 item={item}
                 followingUser={followingUser}

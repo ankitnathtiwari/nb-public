@@ -18,26 +18,7 @@ import { appConfig } from "../app-config";
 export const SocialShare = ({ post, shareUrl }) => {
   return (
     <div className="social-share">
-      <Helmet>
-        <title>{post.title}</title>
-        <meta
-          property="og:url"
-          content={`${shareUrl}/?top=singlepost&id=${post._id}`}
-        />
-        <meta property="og:type" content="image" />
-        <meta
-          property="og:title"
-          content="When Great Minds Don’t Think Alike"
-        />
-        <meta
-          property="og:description"
-          content="How much does culture influence creative thinking?"
-        />
-        <meta
-          property="og:image"
-          content={`${appConfig.url.thumbnail}/${post.thumbNail}`}
-        />
-      </Helmet>
+
 
       <div>
         <WhatsappShareButton
