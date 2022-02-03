@@ -25,7 +25,7 @@ const config = {
       video: "https://d4nl0nj5cg2xr.cloudfront.net",
       image: "https://d4nl0nj5cg2xr.cloudfront.net",
       thumbnail: "https://d4nl0nj5cg2xr.cloudfront.net",
-      share: "http://localhost:8080",
+      share: "https://newsbird.live",
     },
     oAuth: {
       googleId:

@@ -16,6 +16,7 @@ import { BottomNav } from "../bottom-nav";
 import ReactGA from "react-ga";
 import axios from "axios";
 import { appConfig } from "../app-config";
+import { Helmet } from "react-helmet";
 export const globalContext = React.createContext();
 
 export const App = () => {
@@ -50,6 +51,11 @@ export const App = () => {
       value={{ user, setUser, openModal, setOpenModal, sidebar }}
     >
       <BrowserRouter>
+        <Helmet>
+          <title>App Title</title>
+          <meta name="description" content="App Description" />
+          <meta name="theme-color" content="#008f68" />
+        </Helmet>
         <div className="app">
           <NavTop sidebar={sidebar} handleSidebar={handleSidebar} />
           <div className="app-content" onClick={() => handleSidebar(false)}>

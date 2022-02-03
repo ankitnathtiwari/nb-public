@@ -12,14 +12,24 @@ import {
   TelegramIcon,
   TwitterIcon,
 } from "react-share";
+import { Helmet } from "react-helmet";
+import { appConfig } from "../app-config";
 
 export const SocialShare = ({ post, shareUrl }) => {
+  console.log({ post });
   return (
     <div className="social-share">
+      <Helmet>
+        <meta name="description" content="Helmet application" />
+      </Helmet>
+
       <div>
         <WhatsappShareButton
           url={`${shareUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
+          title={post.title}
+          imageUrl={`${appConfig.url.thumbnail}/${post.thumbNail}`}
+          image={`${appConfig.url.thumbnail}/${post.thumbNail}`}
           hashtag="#newsbird"
         >
           <WhatsappIcon size={36} round={true} />
@@ -40,6 +50,7 @@ export const SocialShare = ({ post, shareUrl }) => {
         <TwitterShareButton
           url={`${shareUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
+          title={post.title}
           hashtag="#newsbird"
         >
           <TwitterIcon size={36} round={true} />
