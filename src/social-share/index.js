@@ -20,10 +20,6 @@ export const SocialShare = ({ post, shareUrl }) => {
   return (
     <div className="social-share">
       <Helmet>
-        <meta
-          property="og:video"
-          content="https://www.youtube.com/watch?v=BQBjVr1iHH4"
-        />
         <title>{post.title}</title>
         <meta
           property="og:url"
