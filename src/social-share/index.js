@@ -21,7 +21,7 @@ export const SocialShare = ({ post, shareUrl }) => {
     <div className="social-share">
       <Helmet>
         <meta
-          property="og:url"
+          property="og:video"
           content="https://www.youtube.com/watch?v=BQBjVr1iHH4"
         />
         <title>{post.title}</title>
@@ -38,10 +38,10 @@ export const SocialShare = ({ post, shareUrl }) => {
           property="og:description"
           content="How much does culture influence creative thinking?"
         />
-        <meta
+        {/* <meta
           property="og:image"
           content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
-        />
+        /> */}
       </Helmet>
 
       <div>
