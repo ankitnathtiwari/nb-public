@@ -16,7 +16,7 @@ import { Helmet } from "react-helmet";
 import { appConfig } from "../app-config";
 
 export const SocialShare = ({ post, shareUrl }) => {
-  console.log({ post });
+  console.log({ post, shareUrl });
   return (
     <div className="social-share">
       <Helmet>
