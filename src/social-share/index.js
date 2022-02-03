@@ -16,12 +16,14 @@ import { Helmet } from "react-helmet";
 import { appConfig } from "../app-config";
 
 export const SocialShare = ({ post, shareUrl }) => {
-  console.log({ post, shareUrl });
   return (
     <div className="social-share">
       <Helmet>
         <title>{post.title}</title>
-        <meta property="og:url" content="http://staging.newsbird.live" />
+        <meta
+          property="og:url"
+          content={`${shareUrl}/?top=singlepost&id=${post._id}`}
+        />
         <meta property="og:type" content="image" />
         <meta
           property="og:title"
