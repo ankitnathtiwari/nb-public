@@ -20,6 +20,7 @@ export const SocialShare = ({ post, shareUrl }) => {
         <WhatsappShareButton
           url={`${shareUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
+          title={post.title}
           hashtag="#newsbird"
         >
           <WhatsappIcon size={36} round={true} />
@@ -30,7 +31,8 @@ export const SocialShare = ({ post, shareUrl }) => {
         <FacebookShareButton
           url={`${shareUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
-          hashtag="#newsbird"
+          title={post.title}
+          hashtag="#newsbird.live"
         >
           <FacebookIcon size={36} round={true} />
         </FacebookShareButton>
@@ -40,6 +42,7 @@ export const SocialShare = ({ post, shareUrl }) => {
         <TwitterShareButton
           url={`${shareUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
+          title={post.title}
           hashtag="#newsbird"
         >
           <TwitterIcon size={36} round={true} />
@@ -50,6 +53,7 @@ export const SocialShare = ({ post, shareUrl }) => {
         <LinkedinShareButton
           url={`${shareUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
+          title={post.title}
           hashtag="#newsbird"
         >
           <LinkedinIcon size={36} round={true} />
@@ -60,6 +64,7 @@ export const SocialShare = ({ post, shareUrl }) => {
         <TelegramShareButton
           url={`${shareUrl}/?top=singlepost&id=${post._id}`}
           quote={post.title}
+          title={post.title}
           hashtag="#newsbird"
         >
           <TelegramIcon size={36} round={true} />
