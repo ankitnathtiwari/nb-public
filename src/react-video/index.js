@@ -11,7 +11,7 @@ import { globalContext } from "../app";
 import { FollowButton } from "../shared/button/followButton";
 import { PlayerControl } from "./playerControls";
 
-export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
+export const ReactVideo = ({ item, handleUserFollow }) => {
   const { user, setUser, openModal, setOpenModal } = useContext(globalContext);
   const [volume, setVolume] = useState(0.6);
   const [seekValue, setSeekValue] = useState(0);
@@ -65,7 +65,7 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
         withCredentials: true,
       });
       if (followResponse.data.status) {
-        setFollowingUser({ status: true, user: item.user });
+        handleUserFollow({ status: true, user: item.user });
       }
     } else {
       const followResponse = await axios({
@@ -75,7 +75,7 @@ export const ReactVideo = ({ item, followingUser, setFollowingUser }) => {
       });
       if (followResponse.data.status) {
         //update followStatus of list
-        setFollowingUser({ status: false, user: item.user });
+        handleUserFollow({ status: false, user: item.user });
       }
     }
   };

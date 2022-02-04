@@ -16,6 +16,9 @@ import { BottomNav } from "../bottom-nav";
 import ReactGA from "react-ga";
 import axios from "axios";
 import { appConfig } from "../app-config";
+import { VideoPostList } from "../video-post-list";
+import { VideoParams } from "../item-routing";
+
 export const globalContext = React.createContext();
 
 export const App = () => {
@@ -25,7 +28,6 @@ export const App = () => {
   const [data, setData] = useState({});
   const handleSidebar = (item) => setSidebar(item);
 
-  console.log({ data });
   useEffect(() => {
     const initAuthVerification = async () => {
       const data = await axios({
@@ -44,7 +46,6 @@ export const App = () => {
     ReactGA.pageview(window.location.pathname + window.location.search);
   }, []);
 
-  console.log({ user });
   return (
     <globalContext.Provider
       value={{ user, setUser, openModal, setOpenModal, sidebar }}
@@ -56,7 +57,7 @@ export const App = () => {
             <NavSide />
             <Switch>
               <Route path="/videos">
-                <ShortVideos />
+                <VideoPostList />
               </Route>
               <Route path="/posts">
                 <AllPost />

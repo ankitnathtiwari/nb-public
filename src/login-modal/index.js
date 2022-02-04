@@ -24,8 +24,8 @@ export const LoginModal = ({ setOpenModal }) => {
 
       if (authData.data.status) {
         setUser(authData.data.user);
-        setOpenModal(false);
         setLoading(false);
+        setOpenModal(false);
       }
     }
   };
