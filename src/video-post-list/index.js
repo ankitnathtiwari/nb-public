@@ -79,21 +79,20 @@ export const VideoPostList = () => {
       return getList();
     }
 
-    if (previousQuery.id !== id) {
+    if (id) {
       setPreviousQuery({ ...previousQuery, id: id, page: 1 });
-      if (id) {
-        const queryItem = { topic: topic, id: id, page: 1 };
-        const getList = async () => {
-          setLoading(true);
-          const data = await fetchData(queryItem);
-          if (data.status) {
-            setItemList([...data.data]);
-            setLoading(false);
-          }
-        };
-        return getList();
-      }
+      const queryItem = { topic: topic, itemId: id, page: 1 };
+      const getList = async () => {
+        setLoading(true);
+        const data = await fetchData(queryItem);
+        if (data.status) {
+          setItemList([...data.data]);
+          setLoading(false);
+        }
+      };
+      return getList();
     }
+
     const queryItem = { topic: topic, id: id, page: page };
     const getList = async () => {
       setLoading(true);
