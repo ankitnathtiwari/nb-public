@@ -93,7 +93,7 @@ export const VideoPostList = () => {
       return getList();
     }
 
-    const queryItem = { topic: topic, id: id, page: page };
+    const queryItem = { topic: topic || "allpost", id: id, page: page };
     const getList = async () => {
       setLoading(true);
       const data = await fetchData(queryItem);
@@ -103,7 +103,7 @@ export const VideoPostList = () => {
       }
     };
     return getList();
-  }, [topic, id]);
+  }, [topic, id, user.auth]);
 
   if (loading) {
     return (
