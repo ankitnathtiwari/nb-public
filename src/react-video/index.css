@@ -16,6 +16,11 @@
   line-height: 1.5;
 }
 
+.short-video-with-desc-video-views {
+  font-size: 12px;
+  color: rgb(112, 112, 112);
+  margin-left: 12px;
+}
 .react-player .react-player__preview {
   height: 32vw !important;
 }

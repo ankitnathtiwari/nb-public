@@ -80,6 +80,21 @@ export const ReactVideo = ({ item, handleUserFollow }) => {
     }
   };
 
+  const handlePreviewClick = (item) => {
+    setThumbnailPreview(false);
+    setPlayValue(true);
+
+    const viewCountResponse = async () => {
+      let viewCount = await axios({
+        method: "post",
+        url: `${appConfig.url.api}/public/view_count?videoId=${item._id}`,
+        withCredentials: true,
+      });
+      console.log(viewCount);
+    };
+    viewCountResponse();
+  };
+
   return (
     <div className="short-video-with-desc" key={item._id} ref={videoItemRef}>
       <div
@@ -106,8 +121,7 @@ export const ReactVideo = ({ item, handleUserFollow }) => {
             setPlayDuration(e);
           }}
           onClickPreview={(e) => {
-            setThumbnailPreview(false);
-            setPlayValue(true);
+            handlePreviewClick(item);
           }}
         />
 
@@ -124,6 +138,12 @@ export const ReactVideo = ({ item, handleUserFollow }) => {
         />
       </div>
       <h4 className="short-video-with-desc-video-title">{item.title}</h4>
+      <p className="short-video-with-desc-video-views">
+        {!item.view_count || Number(item.view_count) < 1
+          ? "no"
+          : item.view_count}{" "}
+        views
+      </p>
       <div className="video-post-social-share-button">
         <div className="video-post-social-share-button-time">
           <div>{moment(item.pub_date).startOf("hours").fromNow()}</div>
