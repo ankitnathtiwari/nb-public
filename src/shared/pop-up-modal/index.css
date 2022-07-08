@@ -1,0 +1,12 @@
+.modal-pop-up {
+  width: 90vw;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  min-height: 30vh;
+  position: fixed;
+  top: 30vh;
+  left: 4vw;
+  z-index: 1;
+  background-color: #fefefe;
+  border-radius: 10px;
+  overflow-y: hidden;
+}

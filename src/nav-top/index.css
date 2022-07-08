@@ -1,13 +1,13 @@
 .nav-top {
-  background: #000;
+  background: #fefefe;
   position: fixed;
   z-index: 1000;
 }
 
 .nav-top-bar {
-  height: 70px;
+  height: 10vh;
   width: 100vw;
-  background-color: #000;
+  background-color: #fefefe;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   margin: 0px;
@@ -16,17 +16,14 @@
 
 .nav-top-logo {
   margin: auto;
-  z-index: 1000;
-  background: #000;
+  display: flex;
+  align-items: center;
 }
 .nav-top a {
-  color: rgba(255, 255, 255, 0.933);
+  color: #303036;
   font-size: 22px;
   font-weight: bold;
   padding: 5px;
-}
-.nav-top a:hover {
-  color: rgba(236, 236, 236, 0.933);
 }
 
 .nav-top-burger-icon {
@@ -36,7 +33,16 @@
 /* .nav-top-side-bar {
   position: absolute;
 } */
+
+@media only screen and (max-width: 1100px) {
+  .nav-top-bar {
+    height: 10vh;
+  }
+}
 @media only screen and (max-width: 800px) {
+  .nav-top-bar {
+    height: 10vw;
+  }
   .nav-top-burger-icon {
     display: block;
     margin: auto 30px;
@@ -49,10 +55,27 @@
   }
 }
 @media only screen and (max-width: 500px) {
+  .nav-top-bar {
+    height: 15vw;
+  }
   .nav-top a {
     font-size: 20px;
+    font-weight: 900;
   }
   .nav-top-logo {
-    margin-right: 35px;
+    margin-right: 3vw;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .nav-top-bar {
+    height: 16vw;
+  }
+  .nav-top a {
+    font-size: 20px;
+    font-weight: 900;
+  }
+  .nav-top-logo {
+    margin-right: 3vw;
   }
 }

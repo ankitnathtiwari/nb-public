@@ -1,5 +1,6 @@
 import {
-  fetchCompleted,
+  topicChange,
+  pageChange,
   handleLoadMore,
   handleQuery,
   handleErr,
@@ -7,8 +8,10 @@ import {
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case "fetchCompleted":
-      return fetchCompleted(state, action);
+    case "PAGE_CHANGE":
+      return pageChange(state, action);
+    case "TOPIC_CHANGE":
+      return topicChange(state, action);
     case "LOAD_MORE":
       return handleLoadMore(state, action);
     case "QUERY_CHANGE":

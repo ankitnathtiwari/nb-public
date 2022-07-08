@@ -1,28 +1,76 @@
 import React, { useState, useEffect } from "react";
 import { NavSide } from "../nav-side";
 import { NavTop } from "../nav-top";
-import { PostList } from "../post-list";
-import { BrowserRouter, Redirect, Route } from "react-router-dom";
-
+import {
+  BrowserRouter,
+  Redirect,
+  Route,
+  Switch,
+  useRouteMatch,
+  useLocation,
+} from "react-router-dom";
+import ShortVideos from "../short-videos";
 import "./index.css";
 import { AllPost } from "../allpost";
+import { BottomNav } from "../bottom-nav";
+import ReactGA from "react-ga";
+import axios from "axios";
+import { appConfig } from "../app-config";
+import { VideoPostList } from "../video-post-list";
+import { VideoParams } from "../item-routing";
+
+export const globalContext = React.createContext();
+
 export const App = () => {
   const [sidebar, setSidebar] = useState(false);
+  const [user, setUser] = useState({ _id: "", username: "", auth: false });
+  const [openModal, setOpenModal] = useState(false);
+  const [data, setData] = useState({});
   const handleSidebar = (item) => setSidebar(item);
 
-  return (
-    <BrowserRouter>
-      <div className='app'>
-        <NavTop sidebar={sidebar} handleSidebar={handleSidebar} />
-        <div className='app-content' onClick={() => handleSidebar(false)}>
-          <NavSide />
-          <Route path='/'>
-            <AllPost />
-          </Route>
+  useEffect(() => {
+    const initAuthVerification = async () => {
+      const data = await axios({
+        method: "get",
+        url: `${appConfig.url.api}/auth/publicAuth`,
+        withCredentials: true,
+      });
 
-          {/* <PostList /> */}
+      if (data.data.status) {
+        setUser(data.data.user);
+      }
+    };
+
+    initAuthVerification();
+    ReactGA.initialize(appConfig.analytics.google);
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
+  return (
+    <globalContext.Provider
+      value={{ user, setUser, openModal, setOpenModal, sidebar }}
+    >
+      <BrowserRouter>
+        <div className="app">
+          <NavTop sidebar={sidebar} handleSidebar={handleSidebar} />
+          <div className="app-content" onClick={() => handleSidebar(false)}>
+            <NavSide />
+            <Switch>
+              <Route path="/videos">
+                <VideoPostList />
+              </Route>
+              <Route path="/posts">
+                <AllPost />
+              </Route>
+              <Route exact path="/">
+                <Redirect to="/videos" />
+              </Route>
+            </Switch>
+          </div>
+
+          <BottomNav />
         </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </globalContext.Provider>
   );
 };

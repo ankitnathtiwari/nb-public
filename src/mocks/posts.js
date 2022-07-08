@@ -1,4 +1,4 @@
-const testImage = "http://localhost:8000/image/fakeimage.jpg";
+const testImage = "fakeimage.jpg";
 
 export const posts1 = [
   {

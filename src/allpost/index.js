@@ -8,41 +8,32 @@ import { Post } from "../post/index";
 import { Button } from "../shared/button";
 import { useLocation } from "react-router-dom";
 import { Loading } from "../shared/loading";
-import { topics } from "../base-url/index";
+import { topics } from "../app-config/index";
 
 export const AllPost = () => {
-  const path = useLocation().pathname.split("/")[1];
-  const [state, dispatch] = useReducer(reducer, path, initFun);
-  useFetch(state, dispatch, path);
+  const { search } = useLocation();
 
-  useEffect(() => {
-    console.log(topics.includes(path));
-    if (state.query !== path) {
-      if (path.length !== 0) {
-        dispatch({ type: "QUERY_CHANGE", payload: path });
-      }
-    }
-    return () => {};
-  }, [path]);
+  const [state, dispatch] = useReducer(reducer, search, initFun);
+  useFetch(state, dispatch, search);
 
-  //  console.log(state, "allpost state");
+  console.log("all post render");
   if (state.posts.length === 0) {
     if (state.loading || state.initLoading) {
       return (
-        <div className='loading-component'>
+        <div className="loading-component">
           <Loading />
         </div>
       );
     } else {
       return (
-        <div className='loading-component'>
+        <div className="loading-component">
           <h3>No Post to Show</h3>
         </div>
       );
     }
   } else {
     return (
-      <div className='post-list'>
+      <div className="post-list">
         {state.posts.map((post) => {
           return (
             //            <div  className='post-list'>
@@ -51,9 +42,11 @@ export const AllPost = () => {
           );
         })}
 
-        <Button onClick={() => dispatch({ type: "LOAD_MORE" })}>
-          Load More
-        </Button>
+        {state.posts.length < 5 ? null : (
+          <Button onClick={() => dispatch({ type: "LOAD_MORE" })}>
+            Load More
+          </Button>
+        )}
       </div>
     );
   }

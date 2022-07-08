@@ -4,31 +4,31 @@ import "./index.css";
 
 export const NavSide = () => {
   return (
-    <div className='nav-side'>
+    <div className="nav-side">
       <div>
-        <Link to='/all'>All</Link>
+        <Link to={`?top=allpost`}>All</Link>
       </div>
       <div>
-        <Link to='/politics'>Politics</Link>
+        <Link to={`?top=politics`}>Politics</Link>
       </div>
       <div>
-        <Link to='/sports'>Sports</Link>
-      </div>
-
-      <div>
-        <Link to='/business'>Business</Link>
+        <Link to={`?top=sports`}>Sports</Link>
       </div>
 
       <div>
-        <Link to='/entertainment'> Entertainment</Link>
+        <Link to="?top=entertainment"> Entertainment</Link>
       </div>
-
       <div>
-        <Link to='/world'>World</Link>
+        <Link to="?top=national"> National </Link>
       </div>
-
       <div>
-        <Link to='/scienceandtech'>Science and Technology</Link>
+        <Link to="?top=international"> International</Link>
+      </div>
+      <div>
+        <Link to="?top=miscellaneous"> Miscellaneous</Link>
+      </div>
+      <div>
+        <Link to="?top=scienceandtech">Science and Technology</Link>
       </div>
     </div>
   );

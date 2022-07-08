@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const { envConfig, env_state } = require("./env_config/index");
 
 module.exports = {
   //entrypoint
@@ -9,9 +10,8 @@ module.exports = {
     filename: "bundle.js",
     publicPath: "/",
   },
-  //mode: "development",
-  mode: "production",
-  //loaders
+  mode: envConfig === "staging" ? env_state.PRODUCTION : envConfig,
+
   module: {
     //rules an arry of objects
     rules: [
@@ -29,6 +29,17 @@ module.exports = {
         test: /\.(png|jpe?g|gif)$/i,
         use: ["file-loader"],
       },
+      {
+        test: /\.svg$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              encoding: false,
+            },
+          },
+        ],
+      },
     ],
   },
 
@@ -40,7 +51,8 @@ module.exports = {
   ],
 
   //devServer historyApiFallback for react router
-
+  // devtool: "source-map",
+  devtool: envConfig === env_state.DEVELOPEMENT ? "source-map" : false,
   devServer: {
     historyApiFallback: true,
     contentBase: "./",

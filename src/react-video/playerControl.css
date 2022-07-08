@@ -1,0 +1,123 @@
+.player-control {
+  width: 45vw !important;
+  height: 32vw !important;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.player-control-middle {
+  display: flex;
+  width: 30vw;
+  height: 10vw;
+  margin-top: 14vw;
+  margin-left: 22vw;
+}
+.player-control-end {
+  width: 100vw;
+  height: 10vw;
+  margin-top: 5vw;
+}
+.player-control-end-timer {
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.player-control-end-timer-value {
+  font-size: 12px;
+  color: #e7e7e7;
+}
+.player-control-end-timer-full-screen {
+  display: flex;
+  align-items: center;
+}
+
+.react-player-seek-slider {
+  -webkit-appearance: none;
+  width: 45vw;
+  height: 4px;
+  background: #ff0000;
+}
+
+.react-player-seek-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background: #fefefe;
+  cursor: pointer;
+}
+
+.react-player-seek-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
+  background: #fefefe;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1050px) {
+  .player-control {
+    width: 60vw !important;
+    height: 45vw !important;
+  }
+  .react-player-seek-slider {
+    width: 60vw;
+  }
+  .player-control-middle {
+    margin-top: 14vw;
+    margin-left: 28vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .player-control {
+    width: 90vw !important;
+    height: 60vw !important;
+  }
+  .react-player-seek-slider {
+    width: 90vw;
+  }
+  .player-control-middle {
+    margin-top: 28vw;
+    margin-left: 41vw;
+  }
+  .player-control-end {
+    margin-top: 15vw;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .player-control {
+    width: 90vw !important;
+    height: 60vw !important;
+  }
+  .react-player-seek-slider {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .player-control {
+    width: 90vw !important;
+    height: 60vw !important;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .player-control {
+    width: 100vw !important;
+    height: 67vw !important;
+  }
+  .react-player-seek-slider {
+    width: 100vw;
+  }
+  .player-control-middle {
+    margin-top: 28vw;
+    margin-left: 43vw;
+  }
+  .player-control-end {
+    margin-top: 20vw;
+  }
+}
+@media only screen and (max-width: 375px) {
+}

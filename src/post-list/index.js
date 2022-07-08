@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Post } from "../post";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, useLocation } from "react-router-dom";
-import { baseUrl } from "../base-url";
+import { appConfig } from "../app-config";
 import "./index.css";
 
 export const PostList = () => {
@@ -20,7 +20,11 @@ export const PostList = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`${baseUrl}?top=${location.pathname.split("/")[1]}&page=${page}`)
+      .get(
+        `${appConfig.url.api}?top=${
+          location.pathname.split("/")[1]
+        }&page=${page}`
+      )
       .then((res) => {
         setPosts([...posts, ...res.data]);
         setErr(false);
@@ -44,7 +48,7 @@ export const PostList = () => {
     <div>
       {posts.map((post) => {
         return (
-          <div key={post.id} className='post-list'>
+          <div key={post.id} className="post-list">
             <Post post={post} />
           </div>
         );

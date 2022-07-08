@@ -10,10 +10,10 @@
 
 .loading::after {
   content: "";
-  width: 20px;
-  height: 20px;
-  border: 2px solid #dddddd;
-  border-top-color: #3e3e3e;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #ff0000;
+  border-top-color: #fefefe;
   border-radius: 50%;
   transform: rotate(0.16turn);
   animation: loading 1s ease infinite;
